@@ -24,7 +24,7 @@ main{
 article{
     background-color: lightgrey;
     border-radius: 5px;
-    padding: 10px;
+    padding: 1%;
 }
 @media (min-width:700px){
     main{
