@@ -1,1 +1,56 @@
+body {
+    display: flex;
+    box-sizing: border-box;
+    height: 100vh;
 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    font-family: 'Segoe UI';
+
+}
+
+.loginBox {
+
+    background-color: lightgray;
+    border: 5px solid gray;
+    border-radius: 10px;
+    text-align: center;
+
+    min-width: 400px;
+
+    padding: 20px;
+
+}
+
+.inputField {
+    margin: 2px;
+    height: 20px;
+    width: 50%;
+    font-size: 16px;
+}
+
+#loginButton {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+a:link, a:visited, a:hover, a:active {
+    color: blue;
+    text-decoration: none;
+}
+
+
+/* FOOTER */
+
+footer {
+    margin-top: auto;
+    min-height: 50px;
+
+    width: 100%;
+    background-color: lightgray;
+    border: 5px solid gray;
+    border-radius: 10px;
+    text-align: center;
+}
