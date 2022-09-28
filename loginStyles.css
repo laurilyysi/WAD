@@ -6,17 +6,17 @@ main {
 }
 
 .loginBox {
-    margin: 150px 0px 150px;
+    margin-top: 10%;
     background-color: lightgray;
     border: 5px solid gray;
     border-radius: 10px;
     text-align: center;
-    padding: 20px 100px 20px 100px;
+    min-width: 400px;
 }
 
 .inputField {
     height: 20px;
-    width: 100%;
+    width: 50%;
     font-size: 16px;
 }
 
