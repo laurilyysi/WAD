@@ -21,10 +21,15 @@ main{
  .postPicture{
     width: 100%;
 }
+.quote{
+    font-style: italic;
+}
+
 article{
     background-color: lightgrey;
     border-radius: 5px;
     padding: 1%;
+    margin: 1%;
 }
 @media (min-width:700px){
     main{
