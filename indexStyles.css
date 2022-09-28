@@ -1,0 +1,23 @@
+.flexBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.flexBox main{
+    flex:1;
+    align-items: center;
+    
+}
+main{
+    padding: 150px;
+    align-items: center;
+}
+.postHeader{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+ .postPicture{
+    width: 100%;
+}
