@@ -46,14 +46,15 @@ article{
     list-style: square;
 
 }
-.list ul li::first-letter{
+.list li::first-letter{
     font-size: large;
     color: yellow;
     font-weight: bold;
 }
 ::selection{
     color: yellow;
-}
+    background-color: black;
+ }
 @media (min-width:700px){
     main{
         padding:1% 10% 1% 10%;
