@@ -18,12 +18,12 @@
    display: block;
    color: #000000;
    font-size: .99em;
-   text-decoration: none;
 }
 .nav{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    
 }
 
 
