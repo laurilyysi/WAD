@@ -1,3 +1,7 @@
+* {
+   font-family: 'Segoe UI';
+}
+
 .header > ul {
    list-style: none;
 }
@@ -6,7 +10,6 @@
     background-color: lightgrey;
     position: sticky;
     top: 0;
-    border-radius: 5px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -35,4 +38,19 @@
 
 .userPicture{
    padding: 10px 10px;
+}
+
+.border {
+   border: 5px solid gray;
+   border-radius: 10px;
+}
+
+footer {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   width: 99.5%;
+   text-align: center;
+   background-color: lightgray;
 }

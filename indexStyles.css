@@ -51,6 +51,15 @@ article{
     color: yellow;
     font-weight: bold;
 }
+
+.special ~ li {
+    font-weight: bold;
+}
+
+.special + li {
+    color: green;
+}
+
 ::selection{
     color: yellow;
     background-color: black;
