@@ -20,6 +20,12 @@ main {
     font-size: 16px;
 }
 
+@media (max-width: 450px) {
+    .loginBox {
+        min-width: 90%;
+    }
+}
+
 form > div {
     margin: 5px;
 }
