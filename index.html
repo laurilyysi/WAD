@@ -16,7 +16,16 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="addPost.html">addPost</a></li>
         </ul>
-        <a class="userPicture" href="login.html"><img src="res/userPicture.jpg" width="50" alt="user picture"></a>
+        <div class="dropdown">
+            <button onclick="toggle()" class="dropbtn">
+                <a class="userPicture"><img src="res/userPicture.jpg" width="50" alt="user picture"></a>
+            </button>
+            <div id="myDropdown" class="dropdown-content">
+              <a href="#">John Doe</a>
+              <a href="#">john.doe@ut.ee</a>
+              <a href="#">logout</a>
+            </div>
+          </div> 
     </header>
 
     <div class="flexBox">
@@ -97,6 +106,13 @@
         <p>WAD 2022</p>
     </footer>
 
+    <script>
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function toggle() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+    </script>
 </body>
 
 </html>
