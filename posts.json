@@ -1,56 +1,66 @@
 [
     {
         "author" : "Patrick",
+        "userPicture":"/res/userPicture.jpg",
         "time" : "Oct 22, 2022",
         "textcontent" : "This is spongebob!",
         "imagecontent" : "/res/spongebob.jpg"
     },
     {
         "author": "Squidward",
+        "userPicture":"/res/userPicture.jpg",
         "time": "Oct 1, 2022",
         "textcontent": "\"I'll have you know that I stubbed my toe last week and only cried for 20 minutes.\" - SpongeBob"
     },
     {
         "author":"Patrick",
+        "userPicture":"/res/userPicture.jpg",
         "time": "Sept 14, 2022",
         "textcontent":"Check out this video I found :)",
-        "videocontent": "https://youtu.be/upEVUu0rTpo"
+        "videocontent": "https://www.youtube.com/embed/upEVUu0rTpo"
     },
     {
         "author": "SpongeBob",
+        "userPicture":"/res/userPicture.jpg",
         "time": "Sept 13, 2022",
         "textcontent": "You can do whatever you set your mind to \n Be kind to everyone but not to the point of death\nYou can't spell fun without friends\nOwn your mistakes, no matter the consequences\nOur identities shouldn't be made into jokes\nFind positivity in everything you do\nNot being cool can actually be very cool\n"
     },
     {
         "author":"Sandy",
+        "userPicture":"/res/userPicture.jpg",
         "time": "Aug 5, 2022",
         "textcontent": "Nothing makes me feel better than a laugh.",
         "recordingcontent": "/res/laugh.mp3" 
     },
     {
         "author": "Gary",
+        "userPicture":"/res/userPicture.jpg",
         "time": "May 10, 2022",
         "textcontent":"Meow, meowwwwww"
     },
     {
         "author": "Plankton",
+        "userPicture":"/res/userPicture.jpg",
         "time": "May 10, 2022",
         "textcontent":"Gotta get that secret recipe, I am hungry",
         "recordingcontent":"/res/evilLaugh.mp3"
     },
     {
         "author":"Mr.Krabs",
+        "userPicture":"/res/userPicture.jpg",
         "time": "May 5, 2022",
         "textcontent":"I went to a fancy restaurant today, did not pay.",
         "imagecontent":"/res/krabs.jpg"
     },
     {
         "author":"SpongeBob",
+        "userPicture":"/res/userPicture.jpg",
         "time":"March 25, 2022",
         "textcontent": "Anybody coming to movienight tonight? I have some games planned and some pop kelp made."
     },
     {
         "author":"Gary",
+        "userPicture":"/res/userPicture.jpg",
         "time":"March 25, 2022",
         "textcontent":"Meow, meow, movie, meoooooow"
     }
