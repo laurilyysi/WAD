@@ -1,3 +1,9 @@
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function toggle() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
 function createPost(obj) {
   let article = document.createElement("article");
   article.classList.add("border");
