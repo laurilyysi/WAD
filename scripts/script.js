@@ -78,7 +78,7 @@ function createPost(obj) {
 }
 
 window.onload = function () {
-  let onlineAddress = "http://myjson.dit.upm.es/api/bins/3jvo";
+  let onlineAddress = "http://myjson.dit.upm.es/api/bins/fjz8";
   let localAddress = "posts.json";
 
   fetch(localAddress)
