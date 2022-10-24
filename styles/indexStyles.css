@@ -21,13 +21,15 @@ main{
  .postPicture{
     width: 100%;
 }
-
+.userPicture{
+    width: 7%;
+}
 .quote{
     font-style: italic;
 }
 
 article{
-    background-color: lightgrey;
+    background-color: #a3d3c3;
     border-radius: 5px;
     padding: 1%;
     margin: 1%;

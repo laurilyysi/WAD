@@ -7,7 +7,7 @@ main {
 
 .loginBox {
     margin-top: 10%;
-    background-color: lightgray;
+    background-color: #a3d3c3;
     text-align: center;
     min-width: 400px;
 }
@@ -34,6 +34,6 @@ form > div {
 }
 
 .loginBox a:link, .loginBox a:visited,.loginBox a:hover, .loginBox a:active {
-    color: blue;
+    color: #ff3b3b;
     text-decoration: none;
 }

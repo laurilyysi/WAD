@@ -13,7 +13,7 @@ function createPost(obj) {
 
   let userPic = document.createElement("img");
   userPic.src = obj.userPicture;
-  userPic.setAttribute("width", 30);
+  userPic.classList.add("userPicture");
   div.appendChild(userPic);
 
   let date = document.createElement("p");

@@ -7,8 +7,8 @@
 .flex-container {
     margin-top: 10%;
     display: flex;
-    background-color: lightgrey;
-    border: 5px solid gray;
+    background-color: #a3d3c3;
+    border: 5px solid #8cd49e;
     border-radius: 10px;
     flex-direction: column;
     justify-content: center;
@@ -18,13 +18,15 @@
         
 }
 .button {
-    background-color:blue;
-    color:white
+    background-color:#ff808b;
+    color:white;
+    border: 2px solid #ffd389;
 }
 
 .button2 {
-    background-color:grey;
-    color:white
+    background-color:#ffd389;
+    color:white;
+    border: 2px solid #ff808b;
 }
 
 #postBody {
