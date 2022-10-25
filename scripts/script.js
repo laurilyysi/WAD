@@ -78,8 +78,9 @@ function createPost(obj) {
 }
 
 window.onload = function () {
-  let onlineAddress = "http://myjson.dit.upm.es/api/bins/fjz8";
-  let localAddress = "posts.json";
+  let onlineAddress = "http://myjson.dit.upm.es/api/bins/egs4";
+  let localAddress = "posts.json"; // task 5
+  let wrongAddress = "bosts.json"; // fetching from here displays an error on the page
 
   fetch(localAddress)
     .then((response) => response.json())
@@ -88,5 +89,23 @@ window.onload = function () {
         let main = document.getElementsByTagName("MAIN")[0];
         main.appendChild(createPost(obj));
       }
-    });
+    })
+    .catch(err => {
+      let main = document.getElementsByTagName("MAIN")[0];
+      
+      let article = document.createElement("article");
+      article.classList.add("border");
+      article.classList.add("error")
+
+      let title = document.createElement("h2")
+      title.innerText = "Failed fetching posts"
+
+      let p = document.createElement("p");
+      p.innerText = err;
+
+      article.appendChild(title)
+      article.appendChild(p);
+      main.appendChild(article)
+
+    })
 };

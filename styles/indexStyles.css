@@ -33,7 +33,14 @@ article{
     border-radius: 5px;
     padding: 1%;
     margin: 1%;
+    transition: 0.1s;
 }
+
+article:hover {
+    background-color: #8de8ca;
+    box-shadow: 0px 0px 15px 3px #8cd49e;
+}
+
 .video > iframe{
     position: absolute;
     width: 100%;

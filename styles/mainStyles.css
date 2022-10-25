@@ -4,6 +4,12 @@
 
 body {
    margin: 0px;
+   background-color: lightcyan;
+}
+
+main {
+   min-height: 82.3vh;
+   background-color: lightcyan;
 }
 
 .header > ul {
@@ -114,3 +120,17 @@ footer {
 
 .show {display: block;}
  
+.error {
+   text-align: center;
+   font-size: 18px;
+   font-weight: bold;
+   color: maroon;
+   background-color: pink;
+   border: 5px solid maroon;
+   border-radius: 0px;
+   transition: 0.1s;
+}
+
+.error:hover {
+   background-color: lightcoral;
+}
