@@ -112,9 +112,21 @@ footer {
    }
 }
 
-@media (min-width:1000px){
+@media (min-width:1200px){
    .dropdown-content {
        left: 89%;
+   }
+}
+
+@media (min-width:1500px){
+   .dropdown-content {
+       left: 91%;
+   }
+}
+
+@media (min-width:2000px){
+   .dropdown-content {
+       left: 93%;
    }
 }
 
