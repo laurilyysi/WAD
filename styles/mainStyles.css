@@ -74,7 +74,7 @@ footer {
 }
 
 .dropdown-content {
-   border-radius: 0px;
+   border-radius: 10px;
    display: none;
    position: absolute;
    left: 89%;
@@ -97,7 +97,8 @@ footer {
 }
 
 .logout-button:hover {
-   background-color: #f7e948;
+   background-color: #8cd49e;
+   color: #f7e948;
 }
 
 @media (min-width:100px){
