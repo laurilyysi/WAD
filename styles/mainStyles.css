@@ -65,6 +65,10 @@ footer {
    font-size: .99em;
 }
 
+.dropdown{
+   position: sticky;
+   
+}
 .dropbtn {
    padding: 10px;
    font-size: 10px;
@@ -77,11 +81,12 @@ footer {
    border-radius: 10px;
    display: none;
    position: absolute;
-   left: 89%;
+   
    background-color: #f7e948;
    overflow: visible;
    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
    z-index: 1;
+   right: 1%;
 }
  
 .dropdown-content a {
@@ -99,36 +104,6 @@ footer {
 .logout-button:hover {
    background-color: #8cd49e;
    color: #f7e948;
-}
-
-@media (min-width:100px){
-   .dropdown-content {
-      left: 65%;
-   }
-}
-
-@media (min-width:700px){
-   .dropdown-content {
-      left: 82%;
-   }
-}
-
-@media (min-width:1200px){
-   .dropdown-content {
-       left: 89%;
-   }
-}
-
-@media (min-width:1500px){
-   .dropdown-content {
-       left: 91%;
-   }
-}
-
-@media (min-width:2000px){
-   .dropdown-content {
-       left: 93%;
-   }
 }
 
 .show {display: block;}
