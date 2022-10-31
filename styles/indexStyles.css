@@ -69,10 +69,6 @@ article:hover {
     color: green;
 }
 
-::selection{
-    color: yellow;
-    background-color: black;
- }
 @media (min-width:700px){
     main{
         padding:1% 10% 1% 10%;
