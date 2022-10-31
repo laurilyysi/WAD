@@ -122,3 +122,7 @@ footer {
 .error:hover {
    background-color: lightcoral;
 }
+::selection{
+   color: yellow;
+   background-color: lightcoral;
+}
