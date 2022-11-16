@@ -2,7 +2,7 @@
     <header class="header">
         <ul class="nav">
             <li><router-link to="/">Home</router-link></li>
-            <li><router-link to="/about">addPost</router-link></li>
+            <li><router-link to="/signup">Sign Up</router-link></li>
         </ul>
         <div class="dropdown">
             <button onclick="toggle()" class="dropbtn">
