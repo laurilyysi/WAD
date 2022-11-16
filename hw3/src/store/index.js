@@ -51,7 +51,8 @@ export default createStore({
           "https://nickelodeonuniverse.com/wp-content/uploads/Sandy.png",
         time: "Aug 5, 2022",
         textcontent: "Nothing makes me feel better than a laugh.",
-        recordingcontent: "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/a0bb070e-adf5-429a-8fe7-cf821b91e36c/res_laugh.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221116%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221116T173910Z&X-Amz-Expires=86400&X-Amz-Signature=210744e4a9336c210214c4a3498a44db213ecb732abfbc6c5b333a72317eabdb&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22res_laugh.mp3%22&x-id=GetObject",
+        recordingcontent:
+          "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/a0bb070e-adf5-429a-8fe7-cf821b91e36c/res_laugh.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221116%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221116T173910Z&X-Amz-Expires=86400&X-Amz-Signature=210744e4a9336c210214c4a3498a44db213ecb732abfbc6c5b333a72317eabdb&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22res_laugh.mp3%22&x-id=GetObject",
       },
       {
         id: 6,
@@ -70,7 +71,8 @@ export default createStore({
           "https://64.media.tumblr.com/902fe7cd7c9b95d837dcc7b161a435ed/tumblr_pfsm2zLvkN1v67o1yo1_640.png",
         time: "May 10, 2022",
         textcontent: "Gotta get that secret recipe, I am hungry",
-        recordingcontent: "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/e1afff84-fcd9-460a-9dbe-260e20a5bdda/res_evilLaugh.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221116%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221116T173756Z&X-Amz-Expires=86400&X-Amz-Signature=049cd89a864ad7231aa9bbe4f9dde9e97f701a07481664a0e28a3325daec8c34&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22res_evilLaugh.mp3%22&x-id=GetObject",
+        recordingcontent:
+          "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/e1afff84-fcd9-460a-9dbe-260e20a5bdda/res_evilLaugh.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221116%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221116T173756Z&X-Amz-Expires=86400&X-Amz-Signature=049cd89a864ad7231aa9bbe4f9dde9e97f701a07481664a0e28a3325daec8c34&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22res_evilLaugh.mp3%22&x-id=GetObject",
       },
       {
         id: 8,
@@ -80,7 +82,8 @@ export default createStore({
           "https://nickelodeonuniverse.com/wp-content/uploads/Mr.Krabs_.png",
         time: "May 5, 2022",
         textcontent: "I went to a fancy restaurant today, did not pay.",
-        imagecontent: "https://raw.githubusercontent.com/laurilyysi/WAD/hw2/res/krabs.jpg",
+        imagecontent:
+          "https://raw.githubusercontent.com/laurilyysi/WAD/hw2/res/krabs.jpg",
       },
       {
         id: 9,
@@ -104,7 +107,19 @@ export default createStore({
     ],
   },
   getters: {},
-  mutations: {},
-  actions: {},
+  mutations: {
+    Like: (state, idx) => {
+      state.postList.forEach((post) => {
+        if (post.id === idx) {
+          post.likes += 1
+        }
+      });
+    },
+  },
+  actions: {
+    Like: (act, idx) => {
+      act.commit("Like", idx);
+    },
+  },
   modules: {},
 });

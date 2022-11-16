@@ -14,7 +14,7 @@
                     </audio>
     <p>{{ post.textcontent }}</p>
     <div class="postHeader">
-        <button v-on:click="Like"><img src="https://static.wikia.nocookie.net/spongebob/images/8/84/Krabby_Patty_icon.png" width="30" alt="like button"/></button>
+        <button v-on:click="Like(post.id)"><img src="https://static.wikia.nocookie.net/spongebob/images/8/84/Krabby_Patty_icon.png" width="30" alt="like button"/></button>
         <p>{{post.likes}} likes</p>
     </div>
   </article>
@@ -34,6 +34,11 @@ export default {
       return this.$store.state.postList;
     },
   },
+  methods: {
+    Like: function (idx) {
+      this.$store.dispatch("Like", idx)
+    }
+  }
 };
 </script>
 

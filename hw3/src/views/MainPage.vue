@@ -4,7 +4,7 @@
     <aside class="leftPanel"></aside>
     <main>
       <Post />
-      <button>Reset likes</button>
+      <button class="reset">Reset likes</button>
     </main>
     <aside class="rightPanel"></aside>
   </div>
@@ -28,3 +28,20 @@ export default {
   },
 };
 </script>
+
+<style>
+
+.reset {
+  font-size: 20px;
+  background-color: lightcoral;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+</style>
