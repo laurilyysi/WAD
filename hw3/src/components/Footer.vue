@@ -10,10 +10,6 @@ export default {
 
 };
 
-function toggle() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
 </script>
 
 <style scoped>
