@@ -2,7 +2,7 @@
 <div>
   <article class="border" v-for="post in postList" :key="post.id">
     <div class="postHeader">
-      <img :src=post.userPicture width="30" alt="user picture" />
+      <img class="userPicture" :src=post.userPicture alt="user picture" />
       <p>{{ post.time }}</p>
     </div>
     <img v-if="post.imagecontent != null" class="postPicture" :src=post.imagecontent />
