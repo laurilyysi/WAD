@@ -5,11 +5,15 @@
       <img :src=post.userPicture width="30" alt="user picture" />
       <p>{{ post.time }}</p>
     </div>
-    <img class="postPicture" alt="spongebob" :src=post.imagecontent />
+    <img v-if="post.imagecontent != null" class="postPicture" :src=post.imagecontent />
+    <div v-if="post.videocontent != null" class="video">
+                    <iframe v-if="post.videocontent != null" :src=post.videocontent title="YouTube video player" frameborder="0"></iframe>
+    </div>
+    <audio v-if="post.recordingcontent != null" controls>
+                        <source v-if="post.recordingcontent != null" :src=post.recordingcontent type="audio/mp3">
+                    </audio>
     <p>{{ post.textcontent }}</p>
-    <a class="like" href="#"
-      ><img src="https://static.wikia.nocookie.net/spongebob/images/8/84/Krabby_Patty_icon.png" width="30" alt="like button"
-    /></a>
+    <a class="like" href="#"><img src="https://static.wikia.nocookie.net/spongebob/images/8/84/Krabby_Patty_icon.png" width="30" alt="like button"/></a>
   </article>
   </div>
 </template>
