@@ -28,6 +28,7 @@ export default {
   },
 };
 </script>
+<<<<<<< HEAD
 
 <style>
 
@@ -45,3 +46,5 @@ main {
 }
 
 </style>
+=======
+>>>>>>> cff4cbfcccf42ae6a9cd6db992dadf1db92e6fe8

@@ -36,21 +36,6 @@ footer {
    font-size: .99em;
 }
 
-
-.error {
-   text-align: center;
-   font-size: 18px;
-   font-weight: bold;
-   color: maroon;
-   background-color: pink;
-   border: 5px solid maroon;
-   border-radius: 0px;
-   transition: 0.1s;
-}
-
-.error:hover {
-   background-color: lightcoral;
-}
 ::selection{
    color: yellow;
    background-color: lightcoral;
