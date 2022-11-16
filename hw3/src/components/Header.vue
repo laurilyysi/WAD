@@ -17,6 +17,11 @@
     </header>
 </template>
 
+<script>
+   function toggle() {
+      document.getElementById("myDropdown").classList.toggle("show");
+}
+</script>
 <style>
 .header > ul {
    list-style: none;
@@ -51,10 +56,12 @@
    background-color: #f7e948;
    color: #092747;
 }
+
 .dropdown{
    position: sticky;
-   
+   right: 1;
 }
+
 .dropbtn {
    padding: 10px;
    font-size: 10px;
@@ -67,7 +74,6 @@
    border-radius: 10px;
    display: none;
    position: absolute;
-   
    background-color: #f7e948;
    overflow: visible;
    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
