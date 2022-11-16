@@ -13,7 +13,10 @@
                         <source v-if="post.recordingcontent != null" :src=post.recordingcontent type="audio/mp3">
                     </audio>
     <p>{{ post.textcontent }}</p>
-    <a class="like" href="#"><img src="https://static.wikia.nocookie.net/spongebob/images/8/84/Krabby_Patty_icon.png" width="30" alt="like button"/></a>
+    <div class="postHeader">
+        <button v-on:click="Like"><img src="https://static.wikia.nocookie.net/spongebob/images/8/84/Krabby_Patty_icon.png" width="30" alt="like button"/></button>
+        <p>{{post.likes}} likes</p>
+    </div>
   </article>
   </div>
 </template>
@@ -35,6 +38,14 @@ export default {
 </script>
 
 <style>
+button {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
 .flexBox{
     display: flex;
     align-items: center;
