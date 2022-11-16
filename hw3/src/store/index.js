@@ -115,10 +115,18 @@ export default createStore({
         }
       });
     },
+    Reset: (state) => {
+      state.postList.forEach((post) => {
+          post.likes = 0
+      });
+    },
   },
   actions: {
     Like: (act, idx) => {
       act.commit("Like", idx);
+    },
+    Reset: (act) => {
+      act.commit("Reset");
     },
   },
   modules: {},

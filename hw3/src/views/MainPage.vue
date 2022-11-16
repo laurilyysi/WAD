@@ -4,7 +4,7 @@
     <aside class="leftPanel"></aside>
     <main>
       <Post />
-      <button class="reset">Reset likes</button>
+      <button v-on:click="Reset" class="reset">Reset likes</button>
     </main>
     <aside class="rightPanel"></aside>
   </div>
@@ -26,25 +26,11 @@ export default {
     Footer,
     Post,
   },
+  methods: {
+    Reset: function () {
+      this.$store.dispatch("Reset")
+    }
+  }
 };
+
 </script>
-<<<<<<< HEAD
-
-<style>
-
-.reset {
-  font-size: 20px;
-  background-color: lightcoral;
-  padding: 10px;
-  border-radius: 10px;
-}
-
-main {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-</style>
-=======
->>>>>>> cff4cbfcccf42ae6a9cd6db992dadf1db92e6fe8
