@@ -1,9 +1,15 @@
 <template>
   <Header />
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+      <div class="flexBox">
+        <aside class="leftPanel">
+        </aside>
+        <main>
+          <!-- <img src="../assets/spongebob.jpg"> -->
+            <Post />
+        </main>
+        <aside class="rightPanel">
+        </aside>
+    </div>
   <Footer />
 </template>
 
@@ -12,13 +18,15 @@
 import HelloWorld from '@/components/HelloWorld.vue'
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
+import Post from '@/components/Post.vue'
 
 export default {
   name: 'HomeView',
   components: {
     HelloWorld,
     Header,
-    Footer
+    Footer,
+    Post
   }
 }
 
