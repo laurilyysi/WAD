@@ -5,6 +5,7 @@ export default createStore({
     postList: [
       {
         id: 1,
+        likes: 0,
         author: "Patrick",
         userPicture:
           "https://nickelodeonuniverse.com/wp-content/uploads/Patrick.png",
@@ -15,6 +16,7 @@ export default createStore({
       },
       {
         id: 2,
+        likes: 0,
         author: "Squidward",
         userPicture: "https://miro.medium.com/max/1024/0*YjYX05Vdd6K8UOY8.png",
         time: "Oct 1, 2022",
@@ -23,6 +25,7 @@ export default createStore({
       },
       {
         id: 3,
+        likes: 0,
         author: "Patrick",
         userPicture:
           "https://nickelodeonuniverse.com/wp-content/uploads/Patrick.png",
@@ -32,6 +35,7 @@ export default createStore({
       },
       {
         id: 4,
+        likes: 0,
         author: "SpongeBob",
         userPicture:
           "https://pbs.twimg.com/profile_images/603318855553810432/CXetbed2_400x400.jpg",
@@ -41,6 +45,7 @@ export default createStore({
       },
       {
         id: 5,
+        likes: 0,
         author: "Sandy",
         userPicture:
           "https://nickelodeonuniverse.com/wp-content/uploads/Sandy.png",
@@ -50,6 +55,7 @@ export default createStore({
       },
       {
         id: 6,
+        likes: 0,
         author: "Gary",
         userPicture:
           "https://cdn.shopify.com/s/files/1/0150/0643/3380/files/Screen_Shot_2019-07-01_at_11.04.07_AM_370x230@2x.png",
@@ -58,6 +64,7 @@ export default createStore({
       },
       {
         id: 7,
+        likes: 0,
         author: "Plankton",
         userPicture:
           "https://64.media.tumblr.com/902fe7cd7c9b95d837dcc7b161a435ed/tumblr_pfsm2zLvkN1v67o1yo1_640.png",
@@ -67,6 +74,7 @@ export default createStore({
       },
       {
         id: 8,
+        likes: 0,
         author: "Mr.Krabs",
         userPicture:
           "https://nickelodeonuniverse.com/wp-content/uploads/Mr.Krabs_.png",
@@ -76,6 +84,7 @@ export default createStore({
       },
       {
         id: 9,
+        likes: 0,
         author: "SpongeBob",
         userPicture:
           "https://pbs.twimg.com/profile_images/603318855553810432/CXetbed2_400x400.jpg",
@@ -85,6 +94,7 @@ export default createStore({
       },
       {
         id: 10,
+        likes: 0,
         author: "Gary",
         userPicture:
           "https://cdn.shopify.com/s/files/1/0150/0643/3380/files/Screen_Shot_2019-07-01_at_11.04.07_AM_370x230@2x.png?v=1613674653",
