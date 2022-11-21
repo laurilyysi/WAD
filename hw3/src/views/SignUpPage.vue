@@ -1,7 +1,8 @@
 <template>
   <Header />
-  <div class="empty">
   <br>
+  <div class="layout">
+  <div class="empty">
   <form>
     <div class="container">
       <br>
@@ -26,6 +27,7 @@
   <br>
   </div>
   <Footer />
+  </div>
 </template>
 
 <script>
@@ -44,9 +46,16 @@ export default {
 <style>
 
 
+.layout{
+  display: flex;
+  flex-direction: column;
+}
 
 .empty{
   height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .container{
@@ -56,13 +65,13 @@ export default {
     justify-content: space-between;
     align-items: center;
     z-index: 0;
-    width: 33%;
+    /*width: 33%;*/
     min-width: min-content;
     min-height: min-content;
     height: 40vh;
     position: sticky;
     left: 33%;
-    /*border-radius: 5px; */
+    /*border-radius: 5px;*/
     border-color: #8cd49e;
     border-width: 5px;
     border-style: solid;
