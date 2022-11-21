@@ -55,11 +55,11 @@ export default {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    z-index: 1;
+    z-index: 0;
     width: 33%;
     min-width: min-content;
     min-height: min-content;
-    height: 50vh;
+    height: 40vh;
     position: sticky;
     left: 33%;
     /*border-radius: 5px; */
