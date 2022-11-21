@@ -8,7 +8,6 @@
         <label for="email"><b>Email</b></label>
         <input class="inputText" type="text" placeholder="Email" name="email" required>
       </div>
-        <hr>
       <div class="row">
         <label for="psw"><b>Password</b></label>
         <input class="inputText" type="password" placeholder="Password" name="psw" pattern="^[A-Z](?=.*\d)(?=.*[(.{2}[a-z])(?=.*[A-Z])(?=.*_).{8,14}$" 
@@ -19,9 +18,8 @@
         It should start with an uppercase alphabet. 
         It should include the character “_”" required>
       </div>
-      <hr>
       <button type="submit" class="signupbtn">Sign Up</button>
-      
+      <hr>
     </div>
   </form>
   <br>
@@ -43,6 +41,10 @@ export default {
 
 <style>
 
+.emptySpace{
+  height: 65%;
+}
+
 .container{
     background-color: #a3d3c3;
     display: flex;
@@ -51,9 +53,13 @@ export default {
     align-items: center;
     z-index: 1;
     width: 33%;
+    min-height: 200px;
     position: sticky;
     left: 33%;
-    border-radius: 10px;
+    /*border-radius: 5px; */
+    border-color: #8cd49e;
+    border-width: 5px;
+    border-style: solid;
 }
 
 .row{
@@ -69,7 +75,6 @@ export default {
 }
 
 .signupbtn{
-  border-radius: 10;
   background-color: aqua;
   border-color: aqua;
   border-radius: 10px;
