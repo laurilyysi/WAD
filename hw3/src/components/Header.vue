@@ -5,7 +5,7 @@
             <li><router-link to="/signup">Sign Up</router-link></li>
         </ul>
         <div class="dropdown">
-            <button onclick="toggle()" class="dropbtn">
+            <button class="dropbtn" @click="toggle">
                 <a class="userPicture"><img src="https://pbs.twimg.com/profile_images/603318855553810432/CXetbed2_400x400.jpg" width="50" alt="user picture"></a>
             </button>
             <div id="myDropdown" class="dropdown-content">
@@ -18,8 +18,14 @@
 </template>
 
 <script>
-   function toggle() {
-      document.getElementById("myDropdown").classList.toggle("show");
+export default {
+   name: "Header",
+   props: {},
+   methods: {
+      toggle() {
+         document.getElementById("myDropdown").classList.toggle("show");
+      }
+   }
 }
 </script>
 <style>
