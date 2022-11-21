@@ -26,7 +26,9 @@
   </form>
   <br>
   </div>
+  <div class="reWriteFooterPos">
   <Footer />
+  </div>
   </div>
 </template>
 
@@ -45,6 +47,12 @@ export default {
 
 <style>
 
+.reWriteFooterPos{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
 
 .layout{
   display: flex;
@@ -52,7 +60,6 @@ export default {
 }
 
 .empty{
-  height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -65,16 +72,16 @@ export default {
     justify-content: space-between;
     align-items: center;
     z-index: 0;
-    /*width: 33%;*/
     min-width: min-content;
     min-height: min-content;
     height: 40vh;
+    width: 50vh;
     position: sticky;
     left: 33%;
-    /*border-radius: 5px;*/
     border-color: #8cd49e;
     border-width: 5px;
     border-style: solid;
+    border-radius: 10px;
 }
 
 .row{
@@ -90,9 +97,14 @@ export default {
 }
 
 .signupbtn{
-  background-color: aqua;
-  border-color: aqua;
+  background-color: #8cd49e;
+  border-color: #8cd49e;
   border-radius: 10px;
+}
+
+.signupbtn:hover {
+  background-color: #f7e948;
+  border-color: #f7e948;
 }
 
 </style>

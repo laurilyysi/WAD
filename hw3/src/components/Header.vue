@@ -77,7 +77,7 @@ export default {
 }
 
 .dropdown-content {
-   border-radius: 10px;
+   border-bottom-left-radius: 10px;
    display: none;
    position: absolute;
    background-color: #f7e948;
@@ -88,7 +88,7 @@ export default {
 }
  
 .dropdown-content a {
-   border-radius: 10px;
+   border-bottom-left-radius: 10px;
    color: black;
    padding: 12px 16px;
    text-decoration: none;
