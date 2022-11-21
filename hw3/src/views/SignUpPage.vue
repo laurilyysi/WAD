@@ -6,20 +6,20 @@
   <form>
     <div class="container">
       <br>
-      <div class="row">
-        <label for="email"><b>Email</b></label>
-        <input class="inputText" type="text" placeholder="Email" name="email" required>
-      </div>
-      <div class="row">
-        <label for="psw"><b>Password</b></label>
-        <input class="inputText" type="password" placeholder="Password" name="psw" pattern="^[A-Z](?=.*\d)(?=.*[(.{2}[a-z])(?=.*[A-Z])(?=.*_).{8,14}$" 
-        title="must be at least 8 chars and less than 15 chars. 
-        Includes at least one uppercase alphabet character. 
-        Includes at least two lowercase alphabet characters. 
-        Includes at least one numeric value. 
-        It should start with an uppercase alphabet. 
-        It should include the character “_”" required>
-      </div>
+        <label for="email">
+          <b>Email</b>
+          <input class="inputText" type="text" placeholder="Email" name="email" required>
+      </label>
+        <label for="psw">
+          <b>Password</b>
+          <input class="inputText" type="password" placeholder="Password" name="psw" pattern="^[A-Z](?=.*\d)(?=.*[(.{2}[a-z])(?=.*[A-Z])(?=.*_).{8,14}$" 
+          title="must be at least 8 chars and less than 15 chars. 
+          Includes at least one uppercase alphabet character. 
+          Includes at least two lowercase alphabet characters. 
+          Includes at least one numeric value. 
+          It should start with an uppercase alphabet. 
+          It should include the character “_”" required>
+      </label>
       <button type="submit" class="signupbtn">Sign Up</button>
       <br>
     </div>
@@ -46,6 +46,18 @@ export default {
 </script>
 
 <style>
+
+label {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+input {
+  margin-left: 10px;
+}
 
 .reWriteFooterPos{
   position: fixed;
@@ -81,7 +93,6 @@ export default {
     border-color: #8cd49e;
     border-width: 5px;
     border-style: solid;
-    border-radius: 10px;
 }
 
 .row{
@@ -97,14 +108,14 @@ export default {
 }
 
 .signupbtn{
-  background-color: #8cd49e;
-  border-color: #8cd49e;
+  background-color: #f7e948;
+  border-color: #f7e948;
   border-radius: 10px;
 }
 
 .signupbtn:hover {
-  background-color: #f7e948;
-  border-color: #f7e948;
+  background-color: #ce97ab;
+  border-color: #ce97ab;
 }
 
 </style>
