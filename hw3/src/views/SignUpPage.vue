@@ -1,9 +1,10 @@
 <template>
   <Header />
+  <div class="empty">
   <br>
   <form>
     <div class="container">
-      <hr>
+      <br>
       <div class="row">
         <label for="email"><b>Email</b></label>
         <input class="inputText" type="text" placeholder="Email" name="email" required>
@@ -19,10 +20,11 @@
         It should include the character “_”" required>
       </div>
       <button type="submit" class="signupbtn">Sign Up</button>
-      <hr>
+      <br>
     </div>
   </form>
   <br>
+  </div>
   <Footer />
 </template>
 
@@ -41,8 +43,10 @@ export default {
 
 <style>
 
-.emptySpace{
-  height: 65%;
+
+
+.empty{
+  height: 70vh;
 }
 
 .container{
@@ -53,7 +57,9 @@ export default {
     align-items: center;
     z-index: 1;
     width: 33%;
-    min-height: 200px;
+    min-width: min-content;
+    min-height: min-content;
+    height: 50vh;
     position: sticky;
     left: 33%;
     /*border-radius: 5px; */
