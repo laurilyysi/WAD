@@ -11,7 +11,7 @@
         <hr>
       <div class="row">
         <label for="psw"><b>Password</b></label>
-        <input class="inputText" type="password" placeholder="Password" name="psw" pattern="^[A-Z](?=.*\d)(?=.*[(.{2}[a-z])(?=.*[A-Z])(?=.*-).{8,14}$" 
+        <input class="inputText" type="password" placeholder="Password" name="psw" pattern="^[A-Z](?=.*\d)(?=.*[(.{2}[a-z])(?=.*[A-Z])(?=.*_).{8,14}$" 
         title="must be at least 8 chars and less than 15 chars. 
         Includes at least one uppercase alphabet character. 
         Includes at least two lowercase alphabet characters. 
