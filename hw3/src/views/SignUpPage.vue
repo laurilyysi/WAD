@@ -12,11 +12,11 @@
       </label>
         <label for="psw">
           <b>Password</b>
-          <input class="inputText" type="password" placeholder="Password" name="psw" pattern="^[A-Z](?=.*\d)(?=.*[(.{2}[a-z])(?=.*[A-Z])(?=.*_).{8,14}$" 
-          title="must be at least 8 chars and less than 15 chars. 
-          Includes at least one uppercase alphabet character. 
-          Includes at least two lowercase alphabet characters. 
-          Includes at least one numeric value. 
+          <input class="inputText" type="password" placeholder="Password" name="psw" pattern="^[A-Z](?=.*\d)(?=.*[(.{2}[a-z])(?=.*_).{8,14}$" 
+          title="At least 8 chars and less than 15 chars. 
+          At least one uppercase alphabet character. 
+          At least two lowercase alphabet characters. 
+          At least one numeric value. 
           It should start with an uppercase alphabet. 
           It should include the character “_”" required>
       </label>
