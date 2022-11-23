@@ -3,7 +3,7 @@
   <br>
   <div class="layout">
   <div class="empty">
-  <form>
+  <form @submit="goToHome()">
     <div class="container">
       <br>
         <label for="email">
@@ -41,6 +41,11 @@ export default {
   components: {
     Header,
     Footer
+  },
+  methods:{
+   goToHome(signup){
+    this.$router.push('/'); 
+      }
   }
 }
 </script>
