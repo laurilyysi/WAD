@@ -52,7 +52,7 @@ export default createStore({
         time: "Aug 5, 2022",
         textcontent: "Nothing makes me feel better than a laugh.",
         recordingcontent:
-          "https://cdn.sndup.net/m3nm/res_laugh.mp3?token=uw3dpwc-t5BwMt6EL3tMHhV8eV_JBwgxVFtYPLgusd4&token_path=%2Fm3nm%2F&expires=1669136214",
+          "https://situla.bitbit.net/filebin/8df25326a1eccab3c0a6a358083eac7131df90c8cec3f7c95309d71d681f47bb/8e83de444d4519d43c8ff9f7113d041e13120836af488a119d9889f84148eba0?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=HZXB1J7T0UN34UN512IW%2F20221123%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221123T170828Z&X-Amz-Expires=30&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D30&response-content-disposition=filename%3D%22res_laugh.mp3%22&response-content-type=audio%2Fmpeg&X-Amz-Signature=4fcaedcf4ca5806bf28bcc2c16839e325060e1051db100b61c28bec16b4f9d93",
       },
       {
         id: 6,
@@ -72,7 +72,7 @@ export default createStore({
         time: "May 10, 2022",
         textcontent: "Gotta get that secret recipe, I am hungry",
         recordingcontent:
-          "https://cdn.sndup.net/xngs/res_evilLaugh.mp3?token=zucJDh36LqB2pEIySlLOxURqDtZ22pj8bT2SQvkQDXk&token_path=%2Fxngs%2F&expires=1669136296",
+          "https://situla.bitbit.net/filebin/8df25326a1eccab3c0a6a358083eac7131df90c8cec3f7c95309d71d681f47bb/cd3a975de6b8a02ba8214f2e1e5cf574cd0bffff1c3eccb0608df9c7230abfad?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=HZXB1J7T0UN34UN512IW%2F20221123%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221123T170811Z&X-Amz-Expires=30&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D30&response-content-disposition=filename%3D%22res_evilLaugh.mp3%22&response-content-type=audio%2Fmpeg&X-Amz-Signature=3207a30b5798812795c9959389c9fcdcc857843914f411b145fec5a4faf32bbe",
       },
       {
         id: 8,
