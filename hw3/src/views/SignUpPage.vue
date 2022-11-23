@@ -3,12 +3,12 @@
   <br>
   <div class="layout">
   <div class="empty">
-  <form @submit="goToHome()">
+  <form action="/">
     <div class="container">
       <br>
         <label for="email">
           <b>Email</b>
-          <input class="inputText" type="text" placeholder="Email" name="email" required>
+          <input class="inputText" type="email" placeholder="Email" name="email" required>
       </label>
         <label for="psw">
           <b>Password</b>
@@ -42,11 +42,6 @@ export default {
     Header,
     Footer
   },
-  methods:{
-   goToHome(signup){
-    this.$router.push('/'); 
-      }
-  }
 }
 </script>
 
