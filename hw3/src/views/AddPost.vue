@@ -70,6 +70,10 @@ export default {
   left: 0;
 }
 
+textarea {
+    resize: none;
+}
+
 @media (max-width: 600px) {
   .flex-container,
   textarea {
