@@ -13,7 +13,7 @@
             <div id="myDropdown" class="dropdown-content">
               <a href="#">SpongeBob SquarePants</a>
               <a href="#">bob.pants@ut.ee</a>
-              <a class="logout-button" href="#/signup">logout</a>
+              <a class="logout-button" href="#/login">logout</a>
             </div>
           </div> 
     </header>
