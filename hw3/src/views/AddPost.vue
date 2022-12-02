@@ -3,29 +3,24 @@
 
   <div class="contentBox">
     <div class="flex-container">
-      <h2>Add post</h2>
+      <h2>A post</h2>
       <div>
-        <form action="/action_page.php">
           <p>
-            Body
-            <textarea id="postBody" name="postBody" rows="7" cols="25"></textarea>
+            Body <textarea id="postBody" name="postBody" rows="3" cols="40"></textarea>
           </p>
-        </form>
-      </div>
-      <div>
-        <p>
-          Select File <button class="button2" type="button">Choose File</button>
-        </p>
       </div>
       <div>
         <a href="index.html">
-          <button class="button" type="button" onclick="">Create post</button>
+          <button class="button" type="button" onclick="">Update</button>
         </a>
+        <button class="button" type="button">Delete</button>
       </div>
     </div>
   </div>
 
-  <Footer />
+    <div class="reWriteFooterPos">
+    <Footer />
+  </div>
 </template>
 
 <script>
@@ -42,11 +37,13 @@ export default {
 </script>
 
 <style>
+
 .contentBox {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 150px;
 }
 .flex-container {
   display: flex;
@@ -56,22 +53,29 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-width: 200px;
+  width: 400px;
   padding: 20px;
 }
+
 .button {
   background-color: #ff808b;
   color: white;
   border: 2px solid #ffd389;
+  margin: 0px 0px 0px 20px;
 }
 
-.button2 {
-  background-color: #ffd389;
-  color: white;
-  border: 2px solid #ff808b;
+.reWriteFooterPos{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
-#postBody {
-  color: lightgrey;
+@media (max-width: 600px) {
+  .flex-container,
+  textarea {
+    max-width: 80%;
+  }
 }
+
 </style>
