@@ -28,9 +28,8 @@ export default {
         "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
       ];
 
-      const current = new Date();
-      const date = `${months[current.getMonth()]} ${current.getDate()}, ${current.getFullYear()}`;      
-      return date;
+      const current = new Date();     
+      return current;
     },
 
     add(date){
@@ -38,11 +37,11 @@ export default {
 
       const postInfo = {
         like: 0, 
-        userPicture: "https://pbs.twimg.com/profile_images/1473428449104699392/GnKARPx-_400x400.jpg", 
+        userPicture: "https://pbs.twimg.com/profile_images/603318855553810432/CXetbed2_400x400.jpg", 
         time: date, 
         textcontent: content
       }
-      console.log("sending post: " + postInfo.userPicture + postInfo.time + postInfo.textcontent)
+      console.log("sending post: " + postInfo.userPicture + " " + postInfo.time + " " + postInfo.textcontent)
 
       const requestOptions = {
       method: "POST",
