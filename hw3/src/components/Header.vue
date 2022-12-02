@@ -4,6 +4,7 @@
             <li><router-link to="/">Home</router-link></li>
             <li><router-link to="/signup">Sign Up</router-link></li>
             <li><router-link to="/contact">Contact us</router-link></li>
+            <li><router-link to="/addpost">Add Post</router-link></li>
         </ul>
         <div class="dropdown">
             <button class="dropbtn" @click="toggle">
