@@ -1,6 +1,5 @@
 <template>
-<div>
-  <article class="border" v-for="post in postList" :key="post.id">
+<article class="border">
     <div class="postHeader">
       <img class="userPicture" :src=post.userPicture alt="user picture" />
       <p>{{ post.time }}</p>
@@ -17,23 +16,14 @@
         <button v-on:click="Like(post.id)"><img src="https://static.wikia.nocookie.net/spongebob/images/8/84/Krabby_Patty_icon.png" width="30" alt="like button"/></button>
         <p>{{post.likes}} likes</p>
     </div>
-  </article>
-  </div>
+    </article>
 </template>
 
 <script>
 export default {
 
   name: "Post",
-  props: ["postList"],
-  data: function () {
-    return {};
-  },
-  computed: {
-    postList() {
-      return this.$store.state.postList;
-    },
-  },
+  props: ["post"],
   methods: {
     Like: function (idx) {
       this.$store.dispatch("Like", idx)

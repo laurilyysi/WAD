@@ -3,7 +3,9 @@
   <div class="flexBox">
     <aside class="leftPanel"></aside>
     <main>
-      <Post />
+    <div>
+      <Post v-for="post in data" :key="post.id" :post="post"></Post>
+      </div>
       <button v-on:click="Reset" class="reset">Reset likes</button>
     </main>
     <aside class="rightPanel"></aside>
@@ -26,11 +28,18 @@ export default {
     Footer,
     Post,
   },
+  props: ["postList"],
   methods: {
     Reset: function () {
       this.$store.dispatch("Reset")
-    }
-  }
+    },
+  },
+  data() {
+      return {
+        data: 
+          this.$store.state.postList
+      };
+    },
 };
 
 </script>
