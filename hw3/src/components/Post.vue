@@ -13,8 +13,8 @@
                     </audio>
     <p>{{ post.textcontent }}</p>
     <div class="postHeader">
-        <button v-on:click="Like(post.id)"><img src="https://static.wikia.nocookie.net/spongebob/images/8/84/Krabby_Patty_icon.png" width="30" alt="like button"/></button>
-        <p>{{post.likes}} likes</p>
+        <button v-on:click="updatePost()"><img src="https://static.wikia.nocookie.net/spongebob/images/8/84/Krabby_Patty_icon.png" width="30" alt="like button"/></button>
+        <p>{{post.like}} likes</p>
     </div>
     </article>
 </template>
@@ -25,9 +25,22 @@ export default {
   name: "Post",
   props: ["post"],
   methods: {
-    Like: function (idx) {
-      this.$store.dispatch("Like", idx)
-    }
+     updatePost() {
+        this.post.like +=1
+        fetch(`http://localhost:3000/api/posts/${this.post.id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(this.post),
+      })
+        .then((response) => {
+          console.log(response.data);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    },
   }
 };
 </script>
