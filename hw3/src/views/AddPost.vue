@@ -73,7 +73,7 @@ export default {
 @media (max-width: 600px) {
   .flex-container,
   textarea {
-    max-width: 80%;
+    max-width: 60%;
   }
 }
 
