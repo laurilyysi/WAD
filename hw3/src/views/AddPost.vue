@@ -17,7 +17,6 @@
       </div>
     </div>
   </div>
-
     <div class="reWriteFooterPos">
     <Footer />
   </div>
@@ -43,7 +42,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 150px;
+  margin-top: 5%;
 }
 .flex-container {
   display: flex;
