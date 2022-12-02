@@ -5,14 +5,10 @@
     <div class="flex-container">
       <h2>A post</h2>
       <div>
-          <p>
-            Body <textarea id="postBody" name="postBody" rows="3" cols="40"></textarea>
-          </p>
+          <p>Body</p><textarea id="postBody" name="postBody" rows="3" cols="40"></textarea>
       </div>
       <div>
-        <a href="index.html">
-          <button class="button" type="button" onclick="">Update</button>
-        </a>
+        <button class="button" type="button" onclick="">Update</button>
         <button class="button" type="button">Delete</button>
       </div>
     </div>
@@ -54,13 +50,18 @@ export default {
   align-items: center;
   width: 400px;
   padding: 20px;
+  text-align: center;
 }
 
 .button {
+    margin-top: 10px;
   background-color: #ff808b;
   color: white;
   border: 2px solid #ffd389;
-  margin: 0px 0px 0px 20px;
+}
+
+.button:last-child {
+    margin-left: 50px;
 }
 
 .reWriteFooterPos{
@@ -71,11 +72,16 @@ export default {
 }
 
 textarea {
-    resize: none;
+    resize: vertical;
 }
 
 @media (max-width: 600px) {
   .flex-container,
+  textarea,
+  .contentBox {
+    max-width: 85%;
+  }
+
   textarea {
     max-width: 60%;
   }
