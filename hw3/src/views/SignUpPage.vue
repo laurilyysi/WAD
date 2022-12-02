@@ -1,52 +1,102 @@
 <template>
   <Header />
-  <br>
+  <br />
   <div class="layout">
-  <div class="empty">
-  <form action="/">
-    <div class="container">
-      <br>
-        <label for="email">
-          <b>Email</b>
-          <input class="inputText" type="email" placeholder="Email" name="email" required>
-      </label>
-        <label for="psw">
-          <b>Password</b>
-          <input class="inputText" type="password" placeholder="Password" name="psw" pattern="^[A-Z](?=.*\d)(?=.*[(.{2}[a-z])(?=.*_).{8,14}$" 
-          title="At least 8 chars and less than 15 chars. 
+    <div class="empty">
+        <div class="container">
+          <br />
+          <label for="email">
+            <b>Email</b>
+            <input
+              class="inputText"
+              type="email"
+              placeholder="Email"
+              name="email"
+              required
+              v-model="email"
+            />
+          </label>
+          <label for="password">
+            <b>Password</b>
+            <input
+              class="inputText"
+              type="password"
+              placeholder="Password"
+              name="password"
+              pattern="^[A-Z](?=.*\d)(?=.*[(.{2}[a-z])(?=.*_).{8,14}$"
+              title="At least 8 chars and less than 15 chars. 
           At least one uppercase alphabet character. 
           At least two lowercase alphabet characters. 
           At least one numeric value. 
           It should start with an uppercase alphabet. 
-          It should include the character “_”" required>
-      </label>
-      <button type="submit" class="signupbtn">Sign Up</button>
-      <br>
+          It should include the character “_”"
+              required
+              v-model="password"
+            />
+          </label>
+          <button type="submit" class="signupbtn" @click="SignUp">
+            Sign Up
+          </button>
+          <br />
+        </div>
+      <br />
     </div>
-  </form>
-  <br>
-  </div>
-  <div class="reWriteFooterPos">
-  <Footer />
-  </div>
+    <div class="reWriteFooterPos">
+      <Footer />
+    </div>
   </div>
 </template>
 
 <script>
-import Header from '@/components/Header.vue'
-import Footer from '@/components/Footer.vue'
+import Header from "@/components/Header.vue";
+import Footer from "@/components/Footer.vue";
 
 export default {
-  name: 'SignUpPage',
+  name: "SignUpPage",
+
+  data: function () {
+    return {
+      email: "",
+      password: "",
+    };
+  },
+
   components: {
     Header,
-    Footer
+    Footer,
   },
-}
+
+  methods: {
+    SignUp() {
+      var data = {
+        email: this.email,
+        password: this.password,
+      };
+      // using Fetch - post method - send an HTTP post request to the specified URI with the defined body
+      fetch("http://localhost:3000/auth/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include", //  Don't forget to specify this if you need cookies
+        body: JSON.stringify(data),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          this.$router.push("/");
+          location.assign("/");
+        })
+        .catch((e) => {
+          console.log(e);
+          console.log("error");
+        });
+    },
+  },
+};
 </script>
 
 <style>
-
 label {
   display: flex;
   flex-direction: row;
@@ -59,47 +109,47 @@ input {
   margin-left: 10px;
 }
 
-.reWriteFooterPos{
+.reWriteFooterPos {
   position: fixed;
   right: 0;
   bottom: 0;
   left: 0;
 }
 
-.layout{
+.layout {
   display: flex;
   flex-direction: column;
 }
 
-.empty{
+.empty {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.container{
-    background-color: #a3d3c3;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 0;
-    min-width: min-content;
-    min-height: min-content;
-    position: sticky;
-    padding:5%;
-    border-color: #8cd49e;
-    border-width: 5px;
-    border-style: solid;
+.container {
+  background-color: #a3d3c3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 0;
+  min-width: min-content;
+  min-height: min-content;
+  position: sticky;
+  padding: 5%;
+  border-color: #8cd49e;
+  border-width: 5px;
+  border-style: solid;
 }
 
-.inputText{
+.inputText {
   background-color: lightcyan;
   border-radius: 10px;
   border: none;
 }
 
-.signupbtn{
+.signupbtn {
   background-color: #f7e948;
   border-color: #f7e948;
   border-radius: 10px;
@@ -109,5 +159,4 @@ input {
   background-color: #ce97ab;
   border-color: #ce97ab;
 }
-
 </style>
