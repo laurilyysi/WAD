@@ -138,7 +138,8 @@ app.post('/api/posts', async(req, res) => {
         console.log("a post request has arrived");
         const post = req.body;
         const newpost = await pool.query(
-            "INSERT INTO posttable(\"like\", \"userPicture\", time, textcontent) values ($1, $2, $3, $4)    RETURNING*", [post.like, post.userPicture, post.time, post.textcontent]
+            "INSERT INTO posttable(\"like\", \"userPicture\", time, textcontent) values ($1, $2, $3, $4)    RETURNING*", 
+            [post.like, post.userPicture, post.time, post.textcontent]
         );
         res.json(newpost);
     } catch (err) {

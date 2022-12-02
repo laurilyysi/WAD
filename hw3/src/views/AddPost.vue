@@ -1,15 +1,13 @@
 <template>
   <Header />
-
   <div class="contentBox">
     <div class="flex-container">
-      <h2>A post</h2>
+      <h2>Add post</h2>
       <div>
-          <p>Body</p><textarea id="postBody" name="postBody" rows="3" cols="40"></textarea>
+          <p>Body</p><textarea id="postBody" name="postBody" rows="3" cols="20"></textarea>
       </div>
       <div>
-        <button class="button" type="button" onclick="">Update</button>
-        <button class="button" type="button">Delete</button>
+        <button class="button" type="button" @click="add(currentDate())">Add</button>
       </div>
     </div>
   </div>
@@ -24,6 +22,43 @@ import Footer from "@/components/Footer.vue";
 
 export default {
   name: "AddPost",
+  methods: {
+    currentDate() {
+      const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+      ];
+
+      const current = new Date();
+      const date = `${months[current.getMonth()]} ${current.getDate()}, ${current.getFullYear()}`;      
+      return date;
+    },
+
+    add(date){
+      const content = document.getElementById("postBody").value;
+
+      const postInfo = {
+        like: 0, 
+        userPicture: "https://pbs.twimg.com/profile_images/1473428449104699392/GnKARPx-_400x400.jpg", 
+        time: date, 
+        textcontent: content
+      }
+      console.log("sending post: " + postInfo.userPicture + postInfo.time + postInfo.textcontent)
+
+      const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify( postInfo )
+    };
+
+    fetch("http://localhost:3000/api/posts", requestOptions)
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch((e) => {
+          console.log(e);
+        });
+    }
+  },
   components: {
     Header,
     Footer,

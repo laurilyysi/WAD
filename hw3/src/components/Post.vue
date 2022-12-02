@@ -2,7 +2,7 @@
 <article class="border">
     <div class="postHeader">
       <img class="userPicture" :src=post.userPicture alt="user picture" />
-      <p>{{ post.time.substring(0,10) }}</p>
+      <p>{{ post.time.substring(0,20) }}</p>
     </div>
     <img v-if="post.imagecontent != null" class="postPicture" :src=post.imagecontent />
     <div v-if="post.videocontent != null" class="video">
