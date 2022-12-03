@@ -7,7 +7,7 @@
           <p>Body</p><textarea id="postBody" name="postBody" rows="3" cols="20"></textarea>
       </div>
       <div>
-        <button class="button" type="button" @click="add(currentDate())">Add</button>
+        <button class="button" type="button" @click="add(currentDate())" >Add</button>
       </div>
     </div>
   </div>
@@ -56,6 +56,8 @@ export default {
       .catch((e) => {
           console.log(e);
         });
+      
+        this.$router.push('/');
     }
   },
   components: {

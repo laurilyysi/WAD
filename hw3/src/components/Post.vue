@@ -1,5 +1,7 @@
 <template>
+
 <article class="border">
+    <button v-on:click="toSinglePostView(this.post.id)">
     <div class="postHeader">
       <img class="userPicture" :src=post.userPicture alt="user picture" />
       <p>{{ post.time.substring(0,10) }}</p>
@@ -16,15 +18,23 @@
         <button v-on:click="updatePost()"><img src="https://static.wikia.nocookie.net/spongebob/images/8/84/Krabby_Patty_icon.png" width="30" alt="like button"/></button>
         <p>{{post.like}} likes</p>
     </div>
+    </button>
     </article>
+
 </template>
 
 <script>
 export default {
-
   name: "Post",
   props: ["post"],
   methods: {
+    toSinglePostView(postId){
+        this.postID = postId;
+        console.log("postID is", this.postID, "and it should be used somehow..");
+
+        this.$router.push({path:'/PostPage'});
+    },
+
      updatePost() {
         this.post.like +=1
         fetch(`http://localhost:3000/api/posts/${this.post.id}`, {
