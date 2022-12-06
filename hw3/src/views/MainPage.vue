@@ -5,8 +5,12 @@
     <main>
     <div>
       <Post v-for="post in posts" :key="post.id" :post="post"></Post>
+      <div class="bottombtns">
+        <button class="bottombtn"><a href="#/addpost">Add post</a></button>
+        <button v-on:click="reset()" class="bottombtn">Reset likes</button>
+        <button class="bottombtn">Delete all</button>
       </div>
-      <button v-on:click="reset()" class="reset">Reset likes</button>
+      </div>
     </main>
     <aside class="rightPanel"></aside>
   </div>
@@ -68,8 +72,13 @@ export default {
 </script>
 
 <style>
-
-.reset {
+.bottombtns{
+  display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.bottombtn {
   font-size: 20px;
   background-color: lightcoral;
   padding: 10px;
@@ -82,4 +91,8 @@ main {
   flex-direction: column;
 }
 
+a{
+  text-decoration: none;
+  color: #000000;
+}
 </style>

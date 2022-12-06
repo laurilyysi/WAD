@@ -28,7 +28,7 @@ export default {
         "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
       ];
 
-      const current = new Date();     
+      const current = new Date(); 
       return current;
     },
 
