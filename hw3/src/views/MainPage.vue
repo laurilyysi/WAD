@@ -6,7 +6,7 @@
     <div>
       <Post v-for="post in posts" :key="post.id" :post="post"></Post>
       <div class="bottombtns">
-        <button class="bottombtn"><a href="#/addpost">Add post</a></button>
+        <a href="#/addpost"><button class="bottombtn">Add post</button></a>
         <button v-on:click="reset()" class="bottombtn">Reset likes</button>
         <button class="bottombtn">Delete all</button>
       </div>
@@ -74,9 +74,9 @@ export default {
 <style>
 .bottombtns{
   display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .bottombtn {
   font-size: 20px;
@@ -85,6 +85,10 @@ export default {
   border-radius: 10px;
 }
 
+.bottombtn:hover{
+  background-color: #f7e948;
+  color: #092747;
+}
 main {
   display: flex;
   align-items: center;
