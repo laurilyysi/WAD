@@ -6,9 +6,9 @@
       <div>
         <Post v-for="post in posts" :key="post.id" :post="post"></Post>
         </div>
-        <div>
+        <div class="flexbox">
+          <button class="btn" type="button" @click="update()">Update</button>
             <button class="btn" type="button" @click="deletePost()">Delete Post</button>
-            <button class="btn" type="button" @click="update()">Add</button>
         </div>
       </main>
       <aside class="rightPanel"></aside>
@@ -73,8 +73,16 @@
 
   .btn{
     font-size: .99em;
-  background-color: lightcoral;
-  padding: 10px;
-  border-radius: 10px;
+    background-color: lightcoral;
+    padding: 10px;
+    border-radius: 10px;
+
   }
+
+.flexbox{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
   </style>
