@@ -113,14 +113,15 @@ input {
 }
 
 .btn{
-  background-color: #f7e948;
-  border-color: #f7e948;
+  font-size: .99em;
+  background-color: lightcoral;
+  padding: 10px;
   border-radius: 10px;
 }
 
 .btn:hover {
-  background-color: #ce97ab;
-  border-color: #ce97ab;
+  background-color: #f7e948;
+  color: #092747;
 }
 .buttons{
     display: flex;
