@@ -57,7 +57,7 @@ export default {
           console.log(e);
         });
       
-        this.$router.push('/');
+        this.$router.push({path: '/'}).then(()=>this.$router.go());
     }
   },
   components: {
