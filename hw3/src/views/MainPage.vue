@@ -3,12 +3,13 @@
   <div class="flexBox">
     <aside class="leftPanel"></aside>
     <main>
+    <button class="mainpagebtn">Logout</button>
     <div>
       <Post v-for="post in posts" :key="post.id" :post="post"></Post>
       <div class="bottombtns">
-        <a href="#/addpost"><button class="bottombtn">Add post</button></a>
-        <button v-on:click="reset()" class="bottombtn">Reset likes</button>
-        <button v-on:click="deleteAll()" class="bottombtn">Delete all</button>
+        <a href="#/addpost"><button class="mainpagebtn">Add post</button></a>
+        <button v-on:click="reset()" class="mainpagebtn">Reset likes</button>
+        <button v-on:click="deleteAll()" class="mainpagebtn">Delete all</button>
       </div>
       </div>
     </main>
@@ -63,7 +64,8 @@ export default {
         .then((data) => (this.posts = data))
         .catch((err) => console.log(err.message));
     },
-    deleteAll() {
+
+    deleteAll() { // deletes all post on button click
     this.posts.forEach(post => {
         fetch(`http://localhost:3000/api/posts/${post.id}`, {
         method: "DELETE",
@@ -73,7 +75,7 @@ export default {
       })
         .then((response) => {
           console.log(response.data);
-          this.$router.go(0);
+          this.$router.go(0); // reloads the page after delete done
         })
         .catch((e) => {
           console.log(e);
@@ -96,8 +98,8 @@ export default {
   flex-direction: row;
   justify-content: space-between;
 }
-.bottombtn {
-  font-size: 20px;
+.mainpagebtn {
+  font-size: .99em;
   background-color: lightcoral;
   padding: 10px;
   border-radius: 10px;
