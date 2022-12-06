@@ -50,7 +50,7 @@
             .then((data) => (this.posts = [data]))
             .catch((err) => console.log(err.message))
             ,
-            this.$router.push({path:'/'})
+            this.$router.push({path: '/'}).then(()=>this.$router.go());
             
         }
     },
