@@ -106,7 +106,7 @@ export default {
   border-radius: 10px;
 }
 
-.bottombtn:hover{
+.mainpagebtn:hover{
   background-color: #f7e948;
   color: #092747;
 }

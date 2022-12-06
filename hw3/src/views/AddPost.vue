@@ -1,6 +1,6 @@
 <template>
   <Header />
-  <div class="contentBox">
+  <div class="center">
     <div class="flex-container">
       <h2>Add post</h2>
       <div class="flexbox">
@@ -69,23 +69,24 @@ export default {
 
 <style>
 
-.contentBox {
+.center {
   display: flex;
-  flex-direction: column;
+  align-content: center;
   align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  text-align: center;
   margin-top: 5%;
 }
 .flex-container {
   display: flex;
   background-color: #a3d3c3;
   border: 5px solid #8cd49e;
-  border-radius: 10px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 400px;
-  padding: 20px;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 2%;
   text-align: center;
 }
 
@@ -100,6 +101,10 @@ export default {
   background-color: lightcoral;
   padding: 10px;
   border-radius: 10px;
+}
+.addbtn:hover{
+  background-color: #f7e948;
+  color: #092747;
 }
 
 .reWriteFooterPos{

@@ -54,7 +54,8 @@
             
         },
         update(){
-          
+          // update post data
+          this.$router.push({path: '/'}).then(()=>this.$router.go());
         }
     },
 
@@ -81,7 +82,10 @@
     border-radius: 10px;
 
   }
-
+.btn:hover{
+  background-color: #f7e948;
+  color: #092747;
+}
 .flexbox{
     display: flex;
     align-items: center;
