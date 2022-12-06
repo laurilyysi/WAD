@@ -14,7 +14,8 @@ const routes = [
   {
     path: '/PostPage',
     name: 'PostPage',
-    component: PostPage
+    component: PostPage,
+    params: true
   },
   {
     path: '/signup',

@@ -33,7 +33,7 @@ export default {
   align-items: center;
   flex-direction: column;
   text-align: center;
-  margin-top: 150px;
+  margin-top: 5%;
 }
 
 .contactbox:hover {

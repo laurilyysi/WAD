@@ -7,7 +7,8 @@
         <Post v-for="post in posts" :key="post.id" :post="post"></Post>
         </div>
         <div>
-            <button class="button" type="button" @click="deletePost()" >Delete Post</button>
+            <button class="btn" type="button" @click="deletePost()">Delete Post</button>
+            <button class="btn" type="button" @click="update()">Add</button>
         </div>
       </main>
       <aside class="rightPanel"></aside>
@@ -35,7 +36,7 @@
       },
     methods: {
         fetchPosts() {
-        fetch(`http://localhost:3000/api/posts/${2}`)
+        fetch(`http://localhost:3000/api/posts/${this.post.id}`)
           .then((response) => response.json())
           .then((data) => (this.posts = [data]))
           .catch((err) => console.log(err.message))
@@ -64,17 +65,16 @@
   
   <style>
   
-  .reset {
-    font-size: 20px;
-    background-color: lightcoral;
-    padding: 10px;
-    border-radius: 10px;
-  }
-  
   main {
     display: flex;
     align-items: center;
     flex-direction: column;
   }
-  
+
+  .btn{
+    font-size: .99em;
+  background-color: lightcoral;
+  padding: 10px;
+  border-radius: 10px;
+  }
   </style>

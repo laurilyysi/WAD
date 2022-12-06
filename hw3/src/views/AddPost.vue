@@ -3,11 +3,11 @@
   <div class="contentBox">
     <div class="flex-container">
       <h2>Add post</h2>
-      <div>
-          <p>Body</p><textarea id="postBody" name="postBody" rows="3" cols="20"></textarea>
+      <div class="flexbox">
+          <p>Body</p><textarea id="postBody" name="postBody" rows="3" cols="20" placeholder="body"></textarea>
       </div>
-      <div>
-        <button class="button" type="button" @click="add(currentDate())" >Add</button>
+      <div class="flexbox">
+        <button class="addbtn" type="button" @click="add(currentDate())" >Add</button>
       </div>
     </div>
   </div>
@@ -89,15 +89,17 @@ export default {
   text-align: center;
 }
 
-.button {
-    margin-top: 10px;
-  background-color: #ff808b;
-  color: white;
-  border: 2px solid #ffd389;
+.flexbox{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
 }
-
-.button:last-child {
-    margin-left: 50px;
+.addbtn {
+  font-size: .99em;
+  background-color: lightcoral;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .reWriteFooterPos{
@@ -109,6 +111,7 @@ export default {
 
 textarea {
     resize: vertical;
+    margin: 5%;
 }
 
 @media (max-width: 600px) {
@@ -119,7 +122,7 @@ textarea {
   }
 
   textarea {
-    max-width: 60%;
+    max-width: 70%;
   }
 }
 
