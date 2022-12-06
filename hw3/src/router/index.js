@@ -3,12 +3,18 @@ import HomeView from '../views/MainPage.vue'
 import Contact from '../views/Contact.vue'
 import AddPost from '../views/AddPost.vue'
 import LogIn from '../views/LoginPage.vue'
+import PostPage from '../views/PostPage.vue'
 
 const routes = [
   {
     path: '/',
     name: 'home',
     component: HomeView
+  },
+  {
+    path: '/PostPage',
+    name: 'PostPage',
+    component: PostPage
   },
   {
     path: '/signup',

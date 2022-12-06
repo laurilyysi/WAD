@@ -23,7 +23,7 @@ const createTblQuery = `
 	    "id" SERIAL PRIMARY KEY,
         "like" INTEGER NOT NULL,
         "userPicture" VARCHAR(500) NOT NULL,
-        "time" VARCHAR(20) NOT NULL,
+        "time" DATE NOT NULL,
         "textcontent" VARCHAR(500) NOT NULL,
         "imagecontent" VARCHAR(500),
         "videocontent" VARCHAR(500),

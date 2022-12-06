@@ -5,6 +5,7 @@ const cors = require('cors')
 const bcrypt = require('bcrypt');
 const cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
+const { request } = require('express');
 
 const port = process.env.PORT || 3000;
 
@@ -117,8 +118,6 @@ app.listen(port, () => {
     console.log("Server is listening to port " + port)
 });
 
-
-
 // get all posts (postList)
 app.get('/api/posts', async(req, res) => {
     try {
@@ -126,6 +125,7 @@ app.get('/api/posts', async(req, res) => {
         const posts = await pool.query(
             "SELECT * FROM posttable"
         );
+        res.set("Cache-Control", "no-store=1000")
         res.json(posts.rows);
     } catch (err) {
         console.error(err.message);
