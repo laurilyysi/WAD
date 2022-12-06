@@ -8,7 +8,7 @@
       <div class="bottombtns">
         <a href="#/addpost"><button class="bottombtn">Add post</button></a>
         <button v-on:click="reset()" class="bottombtn">Reset likes</button>
-        <button class="bottombtn">Delete all</button>
+        <button v-on:click="deleteAll()" class="bottombtn">Delete all</button>
       </div>
       </div>
     </main>
@@ -38,7 +38,7 @@ export default {
       };
     },
   methods: {
-    reset(){
+    reset(){ // resets likes
       this.posts.forEach(post => {
         post.like = 0;
         fetch(`http://localhost:3000/api/posts/${post.id}`, {
@@ -56,14 +56,32 @@ export default {
         });
       });;
     },
-    fetchPosts() {
+
+    fetchPosts() { // takes all posts
       fetch(`http://localhost:3000/api/posts/`)
         .then((response) => response.json())
         .then((data) => (this.posts = data))
         .catch((err) => console.log(err.message));
     },
+    deleteAll() {
+    this.posts.forEach(post => {
+        fetch(`http://localhost:3000/api/posts/${post.id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((response) => {
+          console.log(response.data);
+          this.$router.go(0);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+      });;
+  }
   },
-  mounted() {
+  mounted() { // mounts posts to the page
     this.fetchPosts();
     console.log("mounted");
   },

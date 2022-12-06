@@ -78,7 +78,7 @@ main{
     width: 100%;
 }
 .userPicture{
-    width: 7%;
+    width: 15%;
 }
 .quote{
     font-style: italic;

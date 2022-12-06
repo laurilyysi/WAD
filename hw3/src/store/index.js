@@ -108,26 +108,8 @@ export default createStore({
   },
   getters: {},
   mutations: {
-    Like: (state, idx) => {
-      state.postList.forEach((post) => {
-        if (post.id === idx) {
-          post.likes += 1
-        }
-      });
-    },
-    Reset: (state) => {
-      state.postList.forEach((post) => {
-          post.likes = 0
-      });
-    },
   },
   actions: {
-    Like: (act, idx) => {
-      act.commit("Like", idx);
-    },
-    Reset: (act) => {
-      act.commit("Reset");
-    },
   },
   modules: {},
 });
