@@ -52,6 +52,9 @@
             ,
             this.$router.push({path: '/'}).then(()=>this.$router.go());
             
+        },
+        update(){
+          
         }
     },
 
