@@ -4,17 +4,34 @@ import Contact from '../views/Contact.vue'
 import AddPost from '../views/AddPost.vue'
 import LogIn from '../views/LoginPage.vue'
 import PostPage from '../views/PostPage.vue'
+import auth from '../auth'
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: HomeView,
+    beforeEnter: async(to,from,next) => {
+      let authResult = await auth.authenticated(); // does not let go to the home before authenticated
+      if(!authResult){
+        next('/login');
+      }else{
+        next();
+      }
+    }
   },
   {
     path: '/PostPage',
     name: 'PostPage',
     component: PostPage,
+    beforeEnter: async(to,from,next) => {
+      let authResult = await auth.authenticated(); // does not let go to the postpage before authenticated
+      if(!authResult){
+        next('/login');
+      }else{
+        next();
+      }
+    }
   },
   {
     path: '/signup',
@@ -32,7 +49,15 @@ const routes = [
   {
     path: '/addpost',
     name: 'addpost',
-    component: AddPost
+    component: AddPost,
+    beforeEnter: async(to,from,next) => {
+      let authResult = await auth.authenticated(); // does not let go to the addpost page before authenticated
+      if(!authResult){
+        next('/login');
+      }else{
+        next();
+      }
+    }
   },
   {
     path: '/login',

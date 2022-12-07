@@ -36,7 +36,7 @@
       },
     methods: {
         fetchPosts() {
-        fetch(`http://localhost:3000/api/posts/${this.post.id}`)
+        fetch(`http://localhost:3000/api/posts/${3}`)
           .then((response) => response.json())
           .then((data) => (this.posts = [data]))
           .catch((err) => console.log(err.message))

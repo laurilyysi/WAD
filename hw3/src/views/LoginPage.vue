@@ -1,10 +1,9 @@
 <template>
 <Header />
-  <br>
   <div class="layout">
   <div class="empty">
     <div class="container">
-      <br>
+      <h2>Log in</h2>
         <label for="email">
         <b>Email</b>
     <input type="email" class="inputText" name="email"  placeholder="Email" required v-model="email"></label>
@@ -16,7 +15,6 @@
       <button @click='this.$router.push("/signup")' class="btn">Signup</button>
     </div>
     </div>
-  <br>
   </div>
   <div class="reWriteFooterPos">
   <Footer />
@@ -41,14 +39,32 @@ data: function() {
   }
   },
   methods: {
+    LogIn() {
+        var data = {
+          email: this.email,
+          password: this.password
+        };
 
+        fetch("http://localhost:3000/auth/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+            credentials: 'include', 
+            body: JSON.stringify(data),
+        })
+        .then((response) => response.json())
+        .then((data) => {
+        console.log(data);
+        //this.$router.push("/");
+        location.assign("/");
+        })
+        .catch((e) => {
+          console.log(e);
+          console.log("error");
+        });
 
-LogIn() {
-      var data = {
-        email: this.email,
-        password: this.password
-      };
-  }
+    },
   }
 }
 </script>
@@ -93,7 +109,8 @@ input {
     z-index: 0;
     min-width: min-content;
     min-height: min-content;
-    padding:5%;
+    margin:5%;
+    padding: 5%;
     position: sticky;
     border-color: #8cd49e;
     border-width: 5px;

@@ -3,7 +3,7 @@
   <div class="flexBox">
     <aside class="leftPanel"></aside>
     <main>
-    <button class="mainpagebtn">Logout</button>
+    <button class="mainpagebtn" v-on:click="LogOut()">Logout</button>
     <div>
       <Post v-for="post in posts" :key="post.id" :post="post"></Post>
       <div class="bottombtns">
@@ -20,6 +20,7 @@
 
 <script>
 // @ is an alias to /src
+import auth from "../auth";
 import HelloWorld from "@/components/HelloWorld.vue";
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
@@ -37,6 +38,7 @@ export default {
   data() {
       return {
         posts:[],
+        authResult: auth.authenticated()
       };
     },
   methods: {
@@ -82,6 +84,23 @@ export default {
           console.log(e);
         });
       });;
+  },
+  LogOut() {
+    fetch("http://localhost:3000/auth/logout", {
+          credentials: 'include', //  Don't forget to specify this if you need cookies
+      })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        console.log('jwt removed');
+        //console.log('jwt removed:' + auth.authenticated());
+        this.$router.push("/login");
+        //location.assign("/");
+      })
+      .catch((e) => {
+        console.log(e);
+        console.log("error logout");
+      });
   }
   },
   mounted() { // mounts posts to the page

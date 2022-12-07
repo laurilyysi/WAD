@@ -1,10 +1,9 @@
 <template>
   <Header />
-  <br />
   <div class="layout">
     <div class="empty">
         <div class="container">
-          <br />
+          <h2>Sign up</h2>
           <label for="email">
             <b>Email</b>
             <input
@@ -34,12 +33,10 @@
               v-model="password"
             />
           </label>
-          <button type="submit" class="signupbtn" @click="SignUp">
+          <button type="submit" class="signupbtn" @click="SignUp()">
             Sign Up
           </button>
-          <br />
         </div>
-      <br />
     </div>
     <div class="reWriteFooterPos">
       <Footer />
