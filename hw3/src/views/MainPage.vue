@@ -8,9 +8,10 @@
       <Post v-for="post in posts" :key="post.id" :post="post"></Post>
       <div class="bottombtns">
         <a href="#/addpost"><button class="mainpagebtn">Add post</button></a>
-        <button v-on:click="reset()" class="mainpagebtn">Reset likes</button>
-        <button v-on:click="deleteAll()" class="mainpagebtn">Delete all</button>
+        <button v-if="(this.posts.length >0)" v-on:click="reset()" class="mainpagebtn">Reset likes</button>
+        <button v-if="(this.posts.length >0)" v-on:click="deleteAll()" class="mainpagebtn">Delete all</button>
       </div>
+      <div><h3></h3></div>
       </div>
     </main>
     <aside class="rightPanel"></aside>
@@ -20,7 +21,6 @@
 
 <script>
 // @ is an alias to /src
-import auth from "../auth";
 import HelloWorld from "@/components/HelloWorld.vue";
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
@@ -38,7 +38,6 @@ export default {
   data() {
       return {
         posts:[],
-        authResult: auth.authenticated()
       };
     },
   methods: {
@@ -123,6 +122,7 @@ export default {
   background-color: lightcoral;
   padding: 10px;
   border-radius: 10px;
+
 }
 
 .mainpagebtn:hover{

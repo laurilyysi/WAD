@@ -18,7 +18,7 @@
         <button v-on:click="updatePostLike()"><img src="https://static.wikia.nocookie.net/spongebob/images/8/84/Krabby_Patty_icon.png" width="30" alt="like button"/></button>
         <p>{{post.like}} likes</p>
     </div>
-    </button>
+</button>
     </article>
 
 </template>
@@ -89,9 +89,6 @@ main{
 .userPicture{
     width: 15%;
 }
-.quote{
-    font-style: italic;
-}
 
 article{
     background-color: #a3d3c3;
@@ -115,23 +112,6 @@ article:hover {
     position: relative;
     padding-bottom: 56.25%;
     margin-bottom: 1%;
-}
-.list > ul{
-    list-style: square;
-
-}
-.list li::first-letter{
-    font-size: large;
-    color: yellow;
-    font-weight: bold;
-}
-
-.special ~ li {
-    font-weight: bold;
-}
-
-.special + li {
-    color: green;
 }
 
 @media (min-width:700px){
