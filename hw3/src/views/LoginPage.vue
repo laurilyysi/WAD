@@ -44,7 +44,7 @@ data: function() {
           email: this.email,
           password: this.password
         };
-
+        
         fetch("http://localhost:3000/auth/login", {
           method: "POST",
           headers: {
@@ -56,8 +56,8 @@ data: function() {
         .then((response) => response.json())
         .then((data) => {
         console.log(data);
-        //this.$router.push("/");
-        location.assign("/");
+        this.$router.push("/");
+        //location.assign("/");
         })
         .catch((e) => {
           console.log(e);

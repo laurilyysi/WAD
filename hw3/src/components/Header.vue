@@ -2,7 +2,6 @@
     <header class="header">
         <ul class="nav">
             <li><router-link to="/">Home</router-link></li>
-            <li><router-link to="/signup">Sign Up</router-link></li>
             <li><router-link to="/contact">Contacts</router-link></li>
         </ul>
         <div class="dropdown">
