@@ -31,7 +31,7 @@ export default {
     toSinglePostView(postId){
         this.postID = postId;
         console.log("postID is", this.postID);
-        this.$router.push({path:'/PostPage'});
+        this.$router.push({path:'/PostPage/'+this.postID});
     },
 
      updatePostLike() {

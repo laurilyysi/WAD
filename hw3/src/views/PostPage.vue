@@ -4,10 +4,10 @@
       <aside class="leftPanel"></aside>
       <main>
       <div>
-        <Post v-for="post in posts" :key="post.id" :post="post"></Post>
+        <Post :key="post.id" :post="post"></Post>
         </div>
         <div class="flexbox">
-          <button class="btn" type="button" @click="update()">Update</button>
+          <button class="btn" type="button" @click="updatePost()">Update</button>
             <button class="btn" type="button" @click="deletePost()">Delete Post</button>
         </div>
       </main>
@@ -31,36 +31,56 @@
     },
     data() {
         return {
-          posts:[],
+          post:{
+            id:"",
+            userPicture:"",
+            time:"",
+            like:"",
+            textcontent:"",
+            videocontent:"",
+            imagecontent:"",
+            recordingcontent:"",
+          },
         };
       },
     methods: {
-        fetchPosts() {
-        fetch(`http://localhost:3000/api/posts/${3}`)
+
+        fetchAPost(id) {
+        fetch(`http://localhost:3000/api/posts/${id}`)
           .then((response) => response.json())
-          .then((data) => (this.posts = [data]))
+          .then((data) => (this.post = data))
           .catch((err) => console.log(err.message))
           },
+
         deletePost() {
-            fetch(`http://localhost:3000/api/posts/${3}`, {
-            method: "DELETE",
-            headers: {"Content-Type": "application/json",
-        },})
-            .then((response) => response.json())
-            .then((data) => (this.posts = [data]))
-            .catch((err) => console.log(err.message))
-            ,
-            this.$router.push({path: '/'}).then(()=>this.$router.go());
-            
+            fetch(`http://localhost:3000/api/posts/${this.post.id}`, {
+              method: "DELETE",
+              headers: {"Content-Type": "application/json",},
+            })
+            .then((response) => {
+              console.log(response.data);
+              this.$router.push({path: '/'}).then(()=>this.$router.go());
+            })
+            .catch((err) => {console.log(err.message)})
         },
-        update(){
-          // update post data
-          this.$router.push({path: '/'}).then(()=>this.$router.go());
+
+        updatePost(){
+          fetch(`http://localhost:3000/api/posts/${this.post.id}`, {
+            method: "PUT",
+            headers: {"Content-Type": "application/json",
+            body: JSON.stringify(this.post),
+        },})
+            .then((response) => {
+              console.log(response.data);
+              this.$router.push({path: '/'}).then(()=>this.$router.go());
+            })
+            .catch((err) => console.log(err.message))   
         }
     },
 
     mounted() {
-      this.fetchPosts();
+      this.fetchAPost(this.$route.params.id);
+      console.log(this.post.like);
       console.log("mounted");
     },
   };
@@ -80,7 +100,6 @@
     background-color: lightcoral;
     padding: 10px;
     border-radius: 10px;
-
   }
 .btn:hover{
   background-color: #f7e948;

@@ -21,7 +21,7 @@ const routes = [
     }
   },
   {
-    path: '/PostPage',
+    path: '/PostPage/:id',
     name: 'PostPage',
     component: PostPage,
     beforeEnter: async(to,from,next) => {
