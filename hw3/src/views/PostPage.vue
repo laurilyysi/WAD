@@ -8,7 +8,7 @@
         <div>
           <label for="body">
             <b>Body</b>
-            <input name="body" type="text" value="{{ post.textcontent }}">
+            <input name="body" type="text" v-model="post.textcontent">
           </label>
         </div>
         <div class="flexbox">
@@ -27,14 +27,12 @@
 // @ is an alias to /src
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
-import Post from "@/components/Post.vue";
 
 export default {
   name: "PostPage",
   components: {
     Header,
-    Footer,
-    Post,
+    Footer
   },
   data() {
     return {
@@ -73,8 +71,8 @@ export default {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
-          body: JSON.stringify(this.post),
         },
+        body: JSON.stringify(this.post),
       })
         .then((response) => {
           console.log(response.data);
