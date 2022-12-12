@@ -19,7 +19,7 @@ const execute = async (query) => {
 };
 const addIfEmptyQuery = `INSERT INTO "posttable" ("like", "userPicture", "time", "textcontent")
                           SELECT 0, 'https://assets.stickpng.com/thumbs/5874cd0342e4d628738559e1.png', 
-                          '2001-01-01', 'I am brody, and I will eat vegetables'
+                          '2022-05-06', 'I am brody, and I will eat vegetables'
                           WHERE NOT EXISTS (SELECT * FROM "posttable")` 
 
 const createTblQuery = `
