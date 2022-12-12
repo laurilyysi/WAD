@@ -6,7 +6,7 @@
       <div class="flexbox">
         <label for="postBody">
           <b>Body</b>
-          <input id="postBody" name="postBody" value="body">
+          <input id="postBody" name="postBody" placeholder="body">
         </label>
       </div>
       <div class="flexbox">
