@@ -5,7 +5,6 @@
                 <img class="userPicture" :src=post.userPicture alt="user picture" />
                 <p>{{ post.time.substring(0, 10) }}</p>
             </div>
-            <textarea id="editText" rows="3" cols="20">{{ post.textcontent }}</textarea>
             <p id="text" class="text">{{ post.textcontent }}</p>
             <div class="postHeader">
                 <button v-on:click="updatePostLike()"><img
@@ -26,8 +25,6 @@ export default {
             this.postID = postId;
             console.log("postID is", this.postID);
             this.$router.push({ path: '/PostPage/' + this.postID });
-            document.getElementById('text').style.display = 'none';
-            document.getElementById('editText').style.display = 'block'
         },
 
         updatePostLike() {
@@ -51,10 +48,6 @@ export default {
 </script>
 
 <style>
-#editText{
-    display: none;
-}
-
 .text {
     text-align: left;
     padding-left: 5%;

@@ -3,12 +3,19 @@
   <div class="flexBox">
     <aside class="leftPanel"></aside>
     <main>
-      <div>
-        <Post :key="post.id" :post="post"></Post>
-      </div>
-      <div class="flexbox">
-        <button class="btn" type="button" @click="updatePost()">Update</button>
-        <button class="btn" type="button" @click="deletePost()">Delete Post</button>
+      <div class="container">
+        <h2>A Post</h2>
+        <div>
+          <label for="body">
+            <b>Body</b>
+            <input name="body" type="text" value="{{ post.textcontent }}">
+          </label>
+        </div>
+        <div class="flexbox">
+          <button class="btn" type="button" @click="updatePost()">Update</button>
+          <p>or</p>
+          <button class="btn" type="button" @click="deletePost()">Delete Post</button>
+        </div>
       </div>
     </main>
     <aside class="rightPanel"></aside>
@@ -109,5 +116,21 @@ main {
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.container {
+  background-color: #a3d3c3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 0;
+  min-width: min-content;
+  min-height: min-content;
+  position: sticky;
+  padding: 5%;
+  border-color: #8cd49e;
+  border-width: 5px;
+  border-style: solid;
 }
 </style>

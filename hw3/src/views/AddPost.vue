@@ -4,7 +4,10 @@
     <div class="flex-container">
       <h2>Add post</h2>
       <div class="flexbox">
-        <p>Body</p><textarea id="postBody" name="postBody" rows="3" cols="20" placeholder="body"></textarea>
+        <label for="postBody">
+          <b>Body</b>
+          <input id="postBody" name="postBody" value="body">
+        </label>
       </div>
       <div class="flexbox">
         <button class="addbtn" type="button" @click="add(currentDate())">Add</button>
