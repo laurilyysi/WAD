@@ -116,7 +116,7 @@ app.get('/api/posts', async (req, res) => {
     try {
         console.log("get posts request has arrived");
         const posts = await pool.query(
-            "SELECT * FROM posttable"
+            "SELECT * FROM posttable ORDER BY time DESC"
         );
         res.set("Cache-Control", "no-store=1000")
         res.json(posts.rows);
