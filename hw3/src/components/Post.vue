@@ -6,13 +6,13 @@
                 <p>{{ post.time.substring(0, 10) }}</p>
             </div>
             <p class="text">{{ post.textcontent }}</p>
+        </button>
             <div class="postHeader">
                 <button v-on:click="updatePostLike()"><img
                         src="https://static.wikia.nocookie.net/spongebob/images/8/84/Krabby_Patty_icon.png" width="30"
                         alt="like button" /></button>
                 <p>{{ post.like }} likes</p>
             </div>
-        </button>
     </article>
 </template>
 
