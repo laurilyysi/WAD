@@ -8,7 +8,7 @@
         <div>
           <label for="body">
             <b>Body</b>
-            <input name="body" type="text" value="{{ post.textcontent }}">
+            <input id=body name="body" type="text" value="{{ post.textcontent }}">
           </label>
         </div>
         <div class="flexbox">

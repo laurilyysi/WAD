@@ -17,6 +17,10 @@ const execute = async (query) => {
     return false;
   }
 };
+const addIfEmptyQuery = `INSERT INTO "posttable" ("like", "userPicture", "time", "textcontent")
+                          SELECT 0, 'https://assets.stickpng.com/thumbs/5874cd0342e4d628738559e1.png', 
+                          '2001-01-01', 'I am brody, and I will eat vegetables'
+                          WHERE NOT EXISTS (SELECT * FROM "posttable")` 
 
 const createTblQuery = `
     CREATE TABLE IF NOT EXISTS "posttable" (
@@ -31,7 +35,14 @@ execute(createTblQuery).then((result) => {
   if (result) {
     console.log('If does not exists, create the "posttable" table');
   }
-});
+}).then(
+  execute(addIfEmptyQuery).then((result) => {
+  if(result){
+    console.log('Added post to posttable')
+  }
+}));
+
+
 
 const createUserTblQuery = `
     CREATE TABLE IF NOT EXISTS "users" (
