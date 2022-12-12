@@ -11,11 +11,11 @@ const routes = [
     path: '/',
     name: 'home',
     component: HomeView,
-    beforeEnter: async(to,from,next) => {
+    beforeEnter: async (to, from, next) => {
       let authResult = await auth.authenticated(); // does not let go to the home before authenticated
-      if(!authResult){
+      if (!authResult) {
         next('/login');
-      }else{
+      } else {
         next();
       }
     }
@@ -24,11 +24,11 @@ const routes = [
     path: '/PostPage/:id',
     name: 'PostPage',
     component: PostPage,
-    beforeEnter: async(to,from,next) => {
+    beforeEnter: async (to, from, next) => {
       let authResult = await auth.authenticated(); // does not let go to the postpage before authenticated
-      if(!authResult){
+      if (!authResult) {
         next('/login');
-      }else{
+      } else {
         next();
       }
     }
@@ -36,9 +36,6 @@ const routes = [
   {
     path: '/signup',
     name: 'signup',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "signup" */ '../views/SignUpPage.vue')
   },
   {
@@ -50,11 +47,11 @@ const routes = [
     path: '/addpost',
     name: 'addpost',
     component: AddPost,
-    beforeEnter: async(to,from,next) => {
+    beforeEnter: async (to, from, next) => {
       let authResult = await auth.authenticated(); // does not let go to the addpost page before authenticated
-      if(!authResult){
+      if (!authResult) {
         next('/login');
-      }else{
+      } else {
         next();
       }
     }

@@ -2,41 +2,26 @@
   <Header />
   <div class="layout">
     <div class="empty">
-        <div class="container">
-          <h2>Sign up</h2>
-          <label for="email">
-            <b>Email</b>
-            <input
-              class="inputText"
-              type="email"
-              placeholder="Email"
-              name="email"
-              required
-              v-model="email"
-            />
-          </label>
-          <label for="password">
-            <b>Password</b>
-            <input
-              class="inputText"
-              type="password"
-              placeholder="Password"
-              name="password"
-              pattern="^[A-Z](?=.*\d)(?=.*[(.{2}[a-z])(?=.*_).{8,14}$"
-              title="At least 8 chars and less than 15 chars. 
+      <div class="container">
+        <h2>Sign up</h2>
+        <label for="email">
+          <b>Email</b>
+          <input class="inputText" type="email" placeholder="Email" name="email" required v-model="email" />
+        </label>
+        <label for="password">
+          <b>Password</b>
+          <input class="inputText" type="password" placeholder="Password" name="password"
+            pattern="^[A-Z](?=.*\d)(?=.*[(.{2}[a-z])(?=.*_).{8,14}$" title="At least 8 chars and less than 15 chars. 
           At least one uppercase alphabet character. 
           At least two lowercase alphabet characters. 
           At least one numeric value. 
           It should start with an uppercase alphabet. 
-          It should include the character “_”"
-              required
-              v-model="password"
-            />
-          </label>
-          <button type="submit" class="signupbtn" @click="SignUp()">
-            Sign Up
-          </button>
-        </div>
+          It should include the character “_”" required v-model="password" />
+        </label>
+        <button type="submit" class="signupbtn" @click="SignUp()">
+          Sign Up
+        </button>
+      </div>
     </div>
     <div class="reWriteFooterPos">
       <Footer />
@@ -69,20 +54,19 @@ export default {
         email: this.email,
         password: this.password,
       };
-      // using Fetch - post method - send an HTTP post request to the specified URI with the defined body
+
       fetch("http://localhost:3000/auth/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        credentials: "include", //  Don't forget to specify this if you need cookies
+        credentials: "include", // cookies
         body: JSON.stringify(data),
       })
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
           this.$router.push("/");
-          location.assign("/");
         })
         .catch((e) => {
           console.log(e);

@@ -4,14 +4,14 @@
     <div class="flex-container">
       <h2>Add post</h2>
       <div class="flexbox">
-          <p>Body</p><textarea id="postBody" name="postBody" rows="3" cols="20" placeholder="body"></textarea>
+        <p>Body</p><textarea id="postBody" name="postBody" rows="3" cols="20" placeholder="body"></textarea>
       </div>
       <div class="flexbox">
-        <button class="addbtn" type="button" @click="add(currentDate())" >Add</button>
+        <button class="addbtn" type="button" @click="add(currentDate())">Add</button>
       </div>
     </div>
   </div>
-    <div class="reWriteFooterPos">
+  <div class="reWriteFooterPos">
     <Footer />
   </div>
 </template>
@@ -24,40 +24,36 @@ export default {
   name: "AddPost",
   methods: {
     currentDate() {
-      const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-      ];
-
-      const current = new Date(); 
+      const current = new Date();
       return current;
     },
 
-    add(date){
+    add(date) {
       const content = document.getElementById("postBody").value;
 
       const postInfo = {
-        like: 0, 
-        userPicture: "https://pbs.twimg.com/profile_images/603318855553810432/CXetbed2_400x400.jpg", 
-        time: date, 
+        like: 0,
+        userPicture: "https://pbs.twimg.com/profile_images/603318855553810432/CXetbed2_400x400.jpg",
+        time: date,
         textcontent: content
       }
       console.log("sending post: " + postInfo.userPicture + " " + postInfo.time + " " + postInfo.textcontent)
 
       const requestOptions = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify( postInfo )
-    };
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(postInfo)
+      };
 
-    fetch("http://localhost:3000/api/posts", requestOptions)
-      .then(response => {
-        console.log(response.data);
-      })
-      .catch((e) => {
+      fetch("http://localhost:3000/api/posts", requestOptions)
+        .then(response => {
+          console.log(response.data);
+        })
+        .catch((e) => {
           console.log(e);
         });
-      
-        this.$router.push({path: '/'}).then(()=>this.$router.go());
+
+      this.$router.push({ path: '/' }).then(() => this.$router.go());
     }
   },
   components: {
@@ -68,7 +64,6 @@ export default {
 </script>
 
 <style>
-
 .center {
   display: flex;
   align-content: center;
@@ -77,6 +72,7 @@ export default {
   text-align: center;
   margin-top: 5%;
 }
+
 .flex-container {
   display: flex;
   background-color: #a3d3c3;
@@ -90,24 +86,26 @@ export default {
   text-align: center;
 }
 
-.flexbox{
+.flexbox {
   display: flex;
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
 }
+
 .addbtn {
   font-size: .99em;
   background-color: lightcoral;
   padding: 10px;
   border-radius: 10px;
 }
-.addbtn:hover{
+
+.addbtn:hover {
   background-color: #f7e948;
   color: #092747;
 }
 
-.reWriteFooterPos{
+.reWriteFooterPos {
   position: fixed;
   right: 0;
   bottom: 0;
@@ -115,11 +113,12 @@ export default {
 }
 
 textarea {
-    resize: vertical;
-    margin: 5%;
+  resize: vertical;
+  margin: 5%;
 }
 
 @media (max-width: 600px) {
+
   .flex-container,
   textarea,
   .contentBox {
@@ -130,5 +129,4 @@ textarea {
     max-width: 70%;
   }
 }
-
 </style>

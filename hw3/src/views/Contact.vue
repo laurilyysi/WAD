@@ -37,8 +37,8 @@ export default {
 }
 
 .contactbox:hover {
-    background-color: #8de8ca;
-    box-shadow: 0px 0px 15px 3px #8cd49e;
+  background-color: #8de8ca;
+  box-shadow: 0px 0px 15px 3px #8cd49e;
 }
 
 .contactbox {
@@ -57,11 +57,10 @@ export default {
   }
 }
 
-.reWriteFooterPos{
+.reWriteFooterPos {
   position: fixed;
   right: 0;
   bottom: 0;
   left: 0;
 }
-
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <router-view/>
+   <router-view />
 </template>
 
 <style>
@@ -17,7 +17,7 @@ main {
    background-color: lightcyan;
 }
 
-.userPicture{
+.userPicture {
    padding: 10px 10px;
 }
 
@@ -36,7 +36,7 @@ footer {
    font-size: .99em;
 }
 
-::selection{
+::selection {
    color: yellow;
    background-color: lightcoral;
 }

@@ -3,15 +3,17 @@
   <div class="flexBox">
     <aside class="leftPanel"></aside>
     <main>
-    <button class="mainpagebtn" v-on:click="LogOut()">Logout</button>
-    <div>
-      <Post v-for="post in posts" :key="post.id" :post="post"></Post>
-      <div class="bottombtns">
-        <a href="#/addpost"><button class="mainpagebtn">Add post</button></a>
-        <button v-if="(this.posts.length >0)" v-on:click="reset()" class="mainpagebtn">Reset likes</button>
-        <button v-if="(this.posts.length >0)" v-on:click="deleteAll()" class="mainpagebtn">Delete all</button>
-      </div>
-      <div><h3></h3></div>
+      <button class="mainpagebtn" v-on:click="LogOut()">Logout</button>
+      <div>
+        <Post v-for="post in posts" :key="post.id" :post="post"></Post>
+        <div class="bottombtns">
+          <a href="#/addpost"><button class="mainpagebtn">Add post</button></a>
+          <button v-if="(this.posts.length > 0)" v-on:click="reset()" class="mainpagebtn">Reset likes</button>
+          <button v-if="(this.posts.length > 0)" v-on:click="deleteAll()" class="mainpagebtn">Delete all</button>
+        </div>
+        <div>
+          <h3></h3>
+        </div>
       </div>
     </main>
     <aside class="rightPanel"></aside>
@@ -21,7 +23,6 @@
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 import Post from "@/components/Post.vue";
@@ -30,33 +31,32 @@ export default {
   name: "HomeView",
 
   components: {
-    HelloWorld,
     Header,
     Footer,
     Post,
   },
   data() {
-      return {
-        posts:[],
-      };
-    },
+    return {
+      posts: [],
+    };
+  },
   methods: {
-    reset(){ // resets likes
+    reset() { // resets likes
       this.posts.forEach(post => {
         post.like = 0;
         fetch(`http://localhost:3000/api/posts/${post.id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(post),
-      })
-        .then((response) => {
-          console.log(response.data);
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(post),
         })
-        .catch((e) => {
-          console.log(e);
-        });
+          .then((response) => {
+            console.log(response.data);
+          })
+          .catch((e) => {
+            console.log(e);
+          });
       });;
     },
 
@@ -68,39 +68,37 @@ export default {
     },
 
     deleteAll() { // deletes all post on button click
-    this.posts.forEach(post => {
+      this.posts.forEach(post => {
         fetch(`http://localhost:3000/api/posts/${post.id}`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then((response) => {
+            console.log(response.data);
+            this.$router.push({ path: '/' }).then(() => this.$router.go()); // reloads the page after delete done
+          })
+          .catch((e) => {
+            console.log(e);
+          });
+      });;
+    },
+    LogOut() {
+      fetch("http://localhost:3000/auth/logout", {
+        credentials: 'include',
       })
-        .then((response) => {
-          console.log(response.data);
-          this.$router.go(0); // reloads the page after delete done
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          console.log('jwt removed');
+          this.$router.push("/login");
         })
         .catch((e) => {
           console.log(e);
+          console.log("error logout");
         });
-      });;
-  },
-  LogOut() {
-    fetch("http://localhost:3000/auth/logout", {
-          credentials: 'include', //  Don't forget to specify this if you need cookies
-      })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        console.log('jwt removed');
-        //console.log('jwt removed:' + auth.authenticated());
-        this.$router.push("/login");
-        //location.assign("/");
-      })
-      .catch((e) => {
-        console.log(e);
-        console.log("error logout");
-      });
-  }
+    }
   },
   mounted() { // mounts posts to the page
     this.fetchPosts();
@@ -111,12 +109,13 @@ export default {
 </script>
 
 <style>
-.bottombtns{
+.bottombtns {
   display: flex;
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
 }
+
 .mainpagebtn {
   font-size: .99em;
   background-color: lightcoral;
@@ -125,17 +124,18 @@ export default {
 
 }
 
-.mainpagebtn:hover{
+.mainpagebtn:hover {
   background-color: #f7e948;
   color: #092747;
 }
+
 main {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-a{
+a {
   text-decoration: none;
   color: #000000;
 }

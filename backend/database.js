@@ -24,10 +24,7 @@ const createTblQuery = `
         "like" INTEGER NOT NULL,
         "userPicture" VARCHAR(500) NOT NULL,
         "time" DATE NOT NULL,
-        "textcontent" VARCHAR(500) NOT NULL,
-        "imagecontent" VARCHAR(500),
-        "videocontent" VARCHAR(500),
-        "recordingcontent" VARCHAR(500) 
+        "textcontent" VARCHAR(500) NOT NULL
     );`;
 
 execute(createTblQuery).then((result) => {
