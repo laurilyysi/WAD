@@ -56,8 +56,10 @@ export default {
       })
         .then((response) => response.json())
         .then((data) => {
+          if (data.hasOwnProperty("error")) {
+            alert(data.error);
+          }
           console.log(data);
-          // TODO lisada kood logini errorite kohta
           this.$router.push("/");
         })
         .catch((e) => {

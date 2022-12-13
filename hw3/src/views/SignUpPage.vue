@@ -66,7 +66,11 @@ export default {
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
-          this.$router.push("/");
+          if (data.hasOwnProperty("error")) {
+            alert(data.error);
+          } else {
+            this.$router.push("/");
+          }
         })
         .catch((e) => {
           console.log(e);

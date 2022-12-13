@@ -32,18 +32,24 @@ app.post('/auth/signup', async (req, res) => {
         console.log("a signup request has arrived");
         const { email, password } = req.body;
 
-        const salt = await bcrypt.genSalt();                     // generates the salt
-        const bcryptPassword = await bcrypt.hash(password, salt) // hash the password and the salt 
-        const authUser = await pool.query(                       // insert the user and the hashed password into the database
-            "INSERT INTO users(email, password) values ($1, $2) RETURNING*", [email, bcryptPassword]
-        );
-        console.log(authUser.rows[0].id);
-        const token = await generateJWT(authUser.rows[0].id);    // generates a JWT by taking the user id
-        res
-            .status(201)
-            .cookie('jwt', token, { maxAge: 6000000, httpOnly: true })
-            .json({ user_id: authUser.rows[0].id })
-            .send;
+        const user = await pool.query("SELECT * FROM users WHERE email = $1", [email]);
+        if (user.rows.length === 0) {
+
+            const salt = await bcrypt.genSalt();                     // generates the salt
+            const bcryptPassword = await bcrypt.hash(password, salt) // hash the password and the salt 
+            const authUser = await pool.query(                       // insert the user and the hashed password into the database
+                "INSERT INTO users(email, password) values ($1, $2) RETURNING*", [email, bcryptPassword]
+            );
+            console.log(authUser.rows[0].id);
+            const token = await generateJWT(authUser.rows[0].id);    // generates a JWT by taking the user id
+            res
+                .status(201)
+                .cookie('jwt', token, { maxAge: 6000000, httpOnly: true })
+                .json({ user_id: authUser.rows[0].id })
+                .send;
+        } else {
+            return res.status(401).json({ error: "This email is already in use" });
+        }
     } catch (err) {
         console.error(err.message);
         res.status(400).send(err.message);
