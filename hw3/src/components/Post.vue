@@ -1,6 +1,6 @@
 <template>
     <article class="border">
-        <button v-on:click="toSinglePostView(this.post.id)">
+        <button class="onePost" v-on:click="toSinglePostView(this.post.id)">
             <div class="postHeader">
                 <img class="userPicture" :src=post.userPicture alt="user picture" />
                 <p>{{ post.time.substring(0, 10) }}</p>
@@ -60,6 +60,10 @@ button {
     cursor: pointer;
     overflow: hidden;
     outline: none;
+}
+
+.onePost {
+    width: 100%;
 }
 
 .flexBox {
