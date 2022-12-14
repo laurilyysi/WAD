@@ -49,6 +49,8 @@ npm install -g nodemon
 
 npm install pg
 
+npm install rs
+
 npm install cors
 
 npm install bcrypt
@@ -57,6 +59,7 @@ npm install cookie-parser
 
 npm install jsonwebtoken
 
+npm install express
 ```
 
 Run the backend
@@ -77,7 +80,6 @@ Run commands
 npm install
 
 npm run serve
-
 ```
 
 The project should be running on port 8080
