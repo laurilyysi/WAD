@@ -48,8 +48,7 @@ export default {
     },
 
     deleteAll() { // deletes all post on button click
-      this.posts.forEach(post => {
-        fetch(`http://localhost:3000/api/posts/${post.id}`, {
+        fetch(`http://localhost:3000/api/posts/`, {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",
@@ -61,7 +60,6 @@ export default {
           .catch((e) => {
             console.log(e);
           });
-      });;
       this.$router.push({ path: '/' }).then(() => this.$router.go()); // reloads the page after delete done
 
     },

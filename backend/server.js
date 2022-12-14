@@ -160,6 +160,19 @@ app.delete('/api/posts/:id', async (req, res) => {
     }
 });
 
+// Delete all posts
+app.delete('/api/posts/', async (req, res) => {
+    try {
+        console.log("delete all posts request has arrived");
+        const deletepost = await pool.query(
+            "DELETE FROM posttable"
+        );
+        res.json(deletepost);
+    } catch (err) {
+        console.error(err.message);
+    }
+});
+
 // Get only one post based on id
 app.get('/api/posts/:id', async (req, res) => {
     try {
