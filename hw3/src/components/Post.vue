@@ -3,7 +3,7 @@
         <button class="onePost" v-on:click="toSinglePostView(this.post.id)">
             <div class="postHeader">
                 <img class="userPicture" :src=post.userPicture alt="user picture" />
-                <p>{{ post.time.substring(0, 10) }}</p>
+                <p>{{ (new Date(post.time)).toString().substring(0, 10 ) }}</p>
             </div>
             <p id="text" class="text">{{ post.textcontent }}</p>
         </button>

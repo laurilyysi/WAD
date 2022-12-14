@@ -181,9 +181,13 @@ app.put('/api/posts/:id', async (req, res) => {
     try {
         const { id } = req.params;
         const post = req.body;
+        const newDate = new Date(post.time);
+        // newDate.setDate(newDate.getDate + 1);
+        console.log(newDate)
         console.log("update request has arrived");
         const updatepost = await pool.query(
-            "UPDATE posttable SET (\"userPicture\", time, textcontent) = ($2, $3, $4) WHERE id = $1", [id, post.userPicture, post.time, post.textcontent])
+            "UPDATE posttable SET (\"userPicture\", time, textcontent) = ($2, $3, $4) WHERE id = $1",
+            [id, post.userPicture, newDate, post.textcontent])
         res.json(updatepost);
     } catch (err) {
         console.error(err.message);
