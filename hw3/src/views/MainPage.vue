@@ -77,12 +77,13 @@ export default {
         })
           .then((response) => {
             console.log(response.data);
-            this.$router.push({ path: '/' }).then(() => this.$router.go()); // reloads the page after delete done
           })
           .catch((e) => {
             console.log(e);
           });
       });;
+      this.$router.push({ path: '/' }).then(() => this.$router.go()); // reloads the page after delete done
+
     },
     LogOut() {
       fetch("http://localhost:3000/auth/logout", {
