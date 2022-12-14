@@ -8,7 +8,6 @@
         <Post v-for="post in posts" :key="post.id" :post="post"></Post>
         <div class="bottombtns">
           <a href="#/addpost"><button class="mainpagebtn">Add post</button></a>
-          <button v-if="(this.posts.length > 0)" v-on:click="reset()" class="mainpagebtn">Reset likes</button>
           <button v-if="(this.posts.length > 0)" v-on:click="deleteAll()" class="mainpagebtn">Delete all</button>
         </div>
         <div>
@@ -41,25 +40,6 @@ export default {
     };
   },
   methods: {
-    reset() { // resets likes
-      this.posts.forEach(post => {
-        post.like = 0;
-        fetch(`http://localhost:3000/api/posts/${post.id}`, {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(post),
-        })
-          .then((response) => {
-            console.log(response.data);
-          })
-          .catch((e) => {
-            console.log(e);
-          });
-      });;
-    },
-
     fetchPosts() { // takes all posts
       fetch(`http://localhost:3000/api/posts/`)
         .then((response) => response.json())
@@ -68,8 +48,7 @@ export default {
     },
 
     deleteAll() { // deletes all post on button click
-      this.posts.forEach(post => {
-        fetch(`http://localhost:3000/api/posts/${post.id}`, {
+        fetch(`http://localhost:3000/api/posts/`, {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",
@@ -77,12 +56,12 @@ export default {
         })
           .then((response) => {
             console.log(response.data);
-            this.$router.push({ path: '/' }).then(() => this.$router.go()); // reloads the page after delete done
           })
           .catch((e) => {
             console.log(e);
           });
-      });;
+      this.$router.push({ path: '/' }).then(() => this.$router.go()); // reloads the page after delete done
+
     },
     LogOut() {
       fetch("http://localhost:3000/auth/logout", {

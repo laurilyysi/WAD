@@ -40,7 +40,6 @@ export default {
         id: "",
         userPicture: "",
         time: "",
-        like: "",
         textcontent: "",
       },
     };
