@@ -17,15 +17,14 @@ const execute = async (query) => {
     return false;
   }
 };
-const addIfEmptyQuery = `INSERT INTO "posttable" ("like", "userPicture", "time", "textcontent")
-                          SELECT 0, 'https://assets.stickpng.com/thumbs/5874cd0342e4d628738559e1.png', 
+const addIfEmptyQuery = `INSERT INTO "posttable" ("userPicture", "time", "textcontent")
+                          SELECT 'https://assets.stickpng.com/thumbs/5874cd0342e4d628738559e1.png', 
                           '2022-05-06', 'I am brody, and I will eat vegetables'
                           WHERE NOT EXISTS (SELECT * FROM "posttable")` 
 
 const createTblQuery = `
     CREATE TABLE IF NOT EXISTS "posttable" (
 	    "id" SERIAL PRIMARY KEY,
-        "like" INTEGER NOT NULL,
         "userPicture" VARCHAR(500) NOT NULL,
         "time" DATE NOT NULL,
         "textcontent" VARCHAR(500) NOT NULL

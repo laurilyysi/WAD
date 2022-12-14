@@ -137,8 +137,8 @@ app.post('/api/posts', async (req, res) => {
         console.log("a post request has arrived");
         const post = req.body;
         const newpost = await pool.query(
-            "INSERT INTO posttable(\"like\", \"userPicture\", time, textcontent) values ($1, $2, $3, $4)    RETURNING*",
-            [post.like, post.userPicture, post.time, post.textcontent]
+            "INSERT INTO posttable(\"userPicture\", time, textcontent) values ($1, $2, $3)    RETURNING*",
+            [post.userPicture, post.time, post.textcontent]
         );
         res.json(newpost);
     } catch (err) {
@@ -183,7 +183,7 @@ app.put('/api/posts/:id', async (req, res) => {
         const post = req.body;
         console.log("update request has arrived");
         const updatepost = await pool.query(
-            "UPDATE posttable SET (\"like\", \"userPicture\", time, textcontent) = ($2, $3, $4, $5) WHERE id = $1", [id, post.like, post.userPicture, post.time, post.textcontent])
+            "UPDATE posttable SET (\"userPicture\", time, textcontent) = ($2, $3, $4) WHERE id = $1", [id, post.userPicture, post.time, post.textcontent])
         res.json(updatepost);
     } catch (err) {
         console.error(err.message);

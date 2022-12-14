@@ -6,12 +6,6 @@
                 <p>{{ post.time.substring(0, 10) }}</p>
             </div>
             <p id="text" class="text">{{ post.textcontent }}</p>
-            <div class="postHeader">
-                <button v-on:click="updatePostLike()"><img
-                        src="https://static.wikia.nocookie.net/spongebob/images/8/84/Krabby_Patty_icon.png" width="30"
-                        alt="like button" /></button>
-                <p>{{ post.like }} likes</p>
-            </div>
         </button>
     </article>
 </template>
@@ -25,23 +19,6 @@ export default {
             this.postID = postId;
             console.log("postID is", this.postID);
             this.$router.push({ path: '/PostPage/' + this.postID });
-        },
-
-        updatePostLike() {
-            this.post.like += 1
-            fetch(`http://localhost:3000/api/posts/${this.post.id}`, {
-                method: "PUT",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(this.post),
-            })
-                .then((response) => {
-                    console.log(response.data);
-                })
-                .catch((e) => {
-                    console.log(e);
-                });
         },
     }
 };
@@ -90,12 +67,8 @@ main {
     justify-content: space-between;
 }
 
-.postPicture {
-    width: 100%;
-}
-
 .userPicture {
-    width: 15%;
+    width: 10%;
 }
 
 article {

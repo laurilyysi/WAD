@@ -115,11 +115,6 @@ export default {
   left: 0;
 }
 
-textarea {
-  resize: vertical;
-  margin: 5%;
-}
-
 @media (max-width: 600px) {
 
   .flex-container,
