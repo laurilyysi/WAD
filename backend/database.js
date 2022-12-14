@@ -18,36 +18,41 @@ const execute = async (query) => {
     console.error(error.stack);
     return false;
   }
-}; 
-const addIfEmptyQuery = `INSERT INTO "posttable" ("userPicture", "time", "textcontent")
-                          SELECT 'https://pbs.twimg.com/profile_images/603318855553810432/CXetbed2_400x400.jpg', 
-                          '2022-05-06', 'I am brody, and I will eat vegetables'
-                          WHERE NOT EXISTS  (SELECT * FROM "posttable")`;
-const addIf1Query = `INSERT INTO "posttable" ("userPicture", "time", "textcontent")
-                      SELECT 'https://pbs.twimg.com/profile_images/603318855553810432/CXetbed2_400x400.jpg', 
-                      '2022-05-06', 'I am God, and I will eat vegetables'
-                      WHERE (SELECT count("textcontent") FROM "posttable") < 2`; 
-const addIf2Query = `INSERT INTO "posttable" ("userPicture", "time", "textcontent")
-                          SELECT 'https://pbs.twimg.com/profile_images/603318855553810432/CXetbed2_400x400.jpg', 
-                          '2022-05-06', 'I am Tony, and I will not eat vegetables'
-                          WHERE (SELECT count("textcontent") FROM "posttable") < 3`;
-const addIf3Query = `INSERT INTO "posttable" ("userPicture", "time", "textcontent")
-                      SELECT 'https://pbs.twimg.com/profile_images/603318855553810432/CXetbed2_400x400.jpg', 
-                      '2022-05-06', 'I am Mac, and I will eat vegetables'
-                      WHERE (SELECT count("textcontent") FROM "posttable") < 4`;
-const addIf4Query = `INSERT INTO "posttable" ("userPicture", "time", "textcontent")
-                      SELECT 'https://pbs.twimg.com/profile_images/603318855553810432/CXetbed2_400x400.jpg', 
-                      '2022-05-06', 'I am brody2, and I will eat vegetables'
-                      WHERE (SELECT count("textcontent") FROM "posttable") < 5`;
-const addIf5Query = `INSERT INTO "posttable" ("userPicture", "time", "textcontent")
-                  SELECT 'https://pbs.twimg.com/profile_images/603318855553810432/CXetbed2_400x400.jpg', 
-                  '2022-05-06', 'I am God2, and I will eat vegetables'
-                  WHERE (SELECT count("textcontent") FROM "posttable") < 6`;
-const addIf6Query = `INSERT INTO "posttable" ("userPicture", "time", "textcontent")
-                      SELECT 'https://pbs.twimg.com/profile_images/603318855553810432/CXetbed2_400x400.jpg', 
-                      '2022-05-06', 'I am Tony2, and I will eat vegetables'
-                      WHERE (SELECT count("textcontent") FROM "posttable") < 7`;
+};
 
+const execute2 = async (query) => {
+  try {
+    await pool.connect();
+    const answer = await pool.query(query);
+    return answer.rowCount;
+  } catch (error) {
+    console.error(error.stack);
+    return -1;
+  }
+};
+
+const posts = `INSERT INTO posttable ("userPicture", "time", textcontent) VALUES
+('https://pbs.twimg.com/profile_images/603318855553810432/CXetbed2_400x400.jpg', 
+'2022-05-07', 'This is spongebob!'),
+('https://pbs.twimg.com/profile_images/603318855553810432/CXetbed2_400x400.jpg', 
+'2022-05-06', 'Check out this video I found :)'),
+('https://pbs.twimg.com/profile_images/603318855553810432/CXetbed2_400x400.jpg', 
+'2022-05-09', 'You can do whatever you set your mind to'),
+('https://pbs.twimg.com/profile_images/603318855553810432/CXetbed2_400x400.jpg', 
+'2022-05-16', 'Nothing makes me feel better than a laugh.'),
+('https://pbs.twimg.com/profile_images/603318855553810432/CXetbed2_400x400.jpg', 
+'2022-05-03', 'Meow, meowwwwww'),
+('https://pbs.twimg.com/profile_images/603318855553810432/CXetbed2_400x400.jpg', 
+'2022-05-26', 'I went to a fancy restaurant today, did not pay.'), 
+('https://pbs.twimg.com/profile_images/603318855553810432/CXetbed2_400x400.jpg', 
+'2022-11-06', 'Meow, meow, movie, meoooooow'),
+('https://pbs.twimg.com/profile_images/603318855553810432/CXetbed2_400x400.jpg', 
+'2022-05-01', 'Anybody coming to movienight tonight? I have some games planned and some pop kelp made.'),
+('https://pbs.twimg.com/profile_images/603318855553810432/CXetbed2_400x400.jpg', 
+'2022-07-22', 'Gotta get that secret recipe, I am hungry'),
+('https://pbs.twimg.com/profile_images/603318855553810432/CXetbed2_400x400.jpg', 
+'2022-06-06', 'The best time to wear a striped sweater is all the time.')
+`;
 const createTblQuery = `
     CREATE TABLE IF NOT EXISTS "posttable" (
 	    "id" SERIAL PRIMARY KEY,
@@ -56,38 +61,18 @@ const createTblQuery = `
         "textcontent" VARCHAR(500) NOT NULL
     );`;
 
+
 execute(createTblQuery).then((result) => {
-  if(result) {
+  if (result) {
     console.log("if didn't already exist, created posttable");
-    execute(addIfEmptyQuery).then((result) => {
-      if(result){
-        console.log('Added 1st post to posttable');
-        execute(addIf1Query).then((result) => {
-          if(result) {
-            console.log("added 2nd post to posttable");
-            execute(addIf2Query).then((result) => {
-              if(result){
-                console.log('Added 3rd post to posttable');
-                execute(addIf3Query).then((result) => {
-                if(result) {
-                  console.log("added 4th post to posttable")
-                  execute(addIf4Query).then((result) => {
-                  if(result) {
-                    console.log("added 5th post to posttable")
-                    execute(addIf5Query).then((result) => {
-                      if(result) {
-                        console.log("added 6th post to posttable")
-                        execute(addIf6Query).then((result) => {
-                          if(result) {
-                            console.log("added 7th post to posttable")
-                        }})
-                    }})
-                  }})  
-                }})
-              }})
-            }})
-          }})
-}});
+    execute2(`SELECT * from posttable`).then((result) => {
+      if (result == 0) {
+        console.log("a");
+        execute(posts);
+      }
+    })
+  }
+});
 
 const createUserTblQuery = `
     CREATE TABLE IF NOT EXISTS "users" (
